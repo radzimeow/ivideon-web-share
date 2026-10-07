@@ -523,7 +523,7 @@
                     </div>
                     <div class="settings-toggle">
                         <label class="toggle-switch">
-                            <input type="checkbox">
+                            <input type="checkbox" id="setting-sound-1">
                             <span class="slider"></span>
                         </label>
                     </div>
@@ -536,7 +536,7 @@
                     </div>
                     <div class="settings-toggle">
                         <label class="toggle-switch">
-                            <input type="checkbox">
+                            <input type="checkbox" id="setting-archive-1">
                             <span class="slider"></span>
                         </label>
                     </div>
@@ -550,7 +550,7 @@
                         </div>
                         <div class="settings-toggle">
                             <label class="toggle-switch">
-                                <input type="checkbox" onchange="document.getElementById('linkBox').style.display = this.checked ? 'block' : 'none'">
+                                <input type="checkbox" id="setting-link-1" onchange="document.getElementById('linkBox').style.display = this.checked ? 'block' : 'none'">
                                 <span class="slider"></span>
                             </label>
                         </div>
@@ -559,11 +559,11 @@
                     <div class="link-settings-box" id="linkBox" style="display: none; background: #f8f9fa; padding: 20px; border-radius: 6px;">
                         <div class="form-group" style="margin-bottom: 15px;">
                             <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #333;">Ссылка поверх видео</label>
-                            <input type="text" placeholder="Например, https://sanatoriy-more.ru" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;">
+                            <input type="text" id="setting-link-url-1" placeholder="Например, https://sanatoriy-more.ru" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;">
                         </div>
                         <div class="form-group" style="margin-bottom: 0;">
                             <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #333;">Текст, который будет отображаться вместо адреса <span style="color: #999;">(необязательно)</span></label>
-                            <input type="text" placeholder="Например, Заказать путёвку в санаторий «Море»" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;">
+                            <input type="text" id="setting-link-text-1" placeholder="Например, Заказать путёвку в санаторий «Море»" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;">
                         </div>
                     </div>
                 </div>
@@ -672,8 +672,8 @@
                         </div>
                         <div class="settings-toggle">
                             <label class="toggle-switch">
-                                <input type="checkbox" checked onchange="enableApplyButton()">
-                                <span class="slider"></span>
+                            <input type="checkbox" id="setting-sound-2" checked onchange="enableApplyButton()">
+                            <span class="slider"></span>
                             </label>
                         </div>
                     </div>
@@ -685,8 +685,8 @@
                         </div>
                         <div class="settings-toggle">
                             <label class="toggle-switch">
-                                <input type="checkbox" checked onchange="enableApplyButton()">
-                                <span class="slider"></span>
+                            <input type="checkbox" id="setting-archive-2" checked onchange="enableApplyButton()">
+                            <span class="slider"></span>
                             </label>
                         </div>
                     </div>
@@ -699,8 +699,8 @@
                             </div>
                             <div class="settings-toggle">
                                 <label class="toggle-switch">
-                                    <input type="checkbox" checked onchange="document.getElementById('activeLinkBox').style.display = this.checked ? 'block' : 'none'; enableApplyButton();">
-                                    <span class="slider"></span>
+                            <input type="checkbox" id="setting-link-2" checked onchange="document.getElementById('activeLinkBox').style.display = this.checked ? 'block' : 'none'; enableApplyButton();">
+                            <span class="slider"></span>
                                 </label>
                             </div>
                         </div>
@@ -708,11 +708,11 @@
                         <div class="link-settings-box" id="activeLinkBox" style="display: block; background: #f8f9fa; padding: 20px; border-radius: 6px;">
                             <div class="form-group" style="margin-bottom: 15px;">
                                 <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #333;">Ссылка поверх видео</label>
-                                <input type="text" placeholder="Например, https://sanatoriy-more.ru" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;" oninput="enableApplyButton()">
+                                <input type="text" id="setting-link-url-2" placeholder="Например, https://sanatoriy-more.ru" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;" oninput="enableApplyButton()">
                             </div>
                             <div class="form-group" style="margin-bottom: 0;">
                                 <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #333;">Текст, который будет отображаться вместо адреса <span style="color: #999;">(необязательно)</span></label>
-                                <input type="text" placeholder="Например, Заказать путёвку в санаторий «Море»" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;" oninput="enableApplyButton()">
+                                <input type="text" id="setting-link-text-2" placeholder="Например, Заказать путёвку в санаторий «Море»" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;" oninput="enableApplyButton()">
                             </div>
                         </div>
                     </div>
@@ -723,7 +723,7 @@
                 <button class="btn-text" style="color: #1ba0fa; background: none; border: none; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase;">ПРОСМОТР ТРАНСЛЯЦИИ</button>
                 <div style="display: flex; gap: 8px;">
                     <button class="btn-outline" onclick="closeModal('publicActiveModal')">ОТМЕНА</button>
-                    <button class="btn-primary" id="applyActiveBtn" disabled onclick="closeModal('publicActiveModal')">ПРИМЕНИТЬ</button>
+                    <button class="btn-primary" id="applyActiveBtn" disabled onclick="applyActiveSettings()">ПРИМЕНИТЬ</button>
                 </div>
             </div>
         </div>
@@ -770,7 +770,46 @@
             cam3: false
         };
         
+        const cameraConfig = {
+            cam1: { sound: false, archive: false, link: false, linkUrl: '', linkText: '' },
+            cam2: { sound: false, archive: false, link: false, linkUrl: '', linkText: '' },
+            cam3: { sound: false, archive: false, link: false, linkUrl: '', linkText: '' }
+        };
+        
         let currentCameraId = null;
+
+        function loadSettingsToUI(suffix) {
+            const cfg = cameraConfig[currentCameraId];
+            if(!cfg) return;
+            
+            document.getElementById('setting-sound-' + suffix).checked = cfg.sound;
+            document.getElementById('setting-archive-' + suffix).checked = cfg.archive;
+            
+            const linkCb = document.getElementById('setting-link-' + suffix);
+            linkCb.checked = cfg.link;
+            
+            const linkBox = suffix === 1 ? 'linkBox' : 'activeLinkBox';
+            document.getElementById(linkBox).style.display = cfg.link ? 'block' : 'none';
+            
+            document.getElementById('setting-link-url-' + suffix).value = cfg.linkUrl;
+            document.getElementById('setting-link-text-' + suffix).value = cfg.linkText;
+        }
+
+        function saveSettingsFromUI(suffix) {
+            const cfg = cameraConfig[currentCameraId];
+            if(!cfg) return;
+            
+            cfg.sound = document.getElementById('setting-sound-' + suffix).checked;
+            cfg.archive = document.getElementById('setting-archive-' + suffix).checked;
+            cfg.link = document.getElementById('setting-link-' + suffix).checked;
+            cfg.linkUrl = document.getElementById('setting-link-url-' + suffix).value;
+            cfg.linkText = document.getElementById('setting-link-text-' + suffix).value;
+        }
+
+        function applyActiveSettings() {
+            saveSettingsFromUI(2);
+            document.getElementById('applyActiveBtn').disabled = true;
+        }
 
         function openAccessModal(id, name) {
             currentCameraId = id;
@@ -807,6 +846,7 @@
             closeModal('accessModal'); // Close first modal
             if (cameraStates[currentCameraId]) {
                 resetPublicActiveTabs();
+                loadSettingsToUI(2);
                 openModal('publicActiveModal');
             } else {
                 openModal('publicWarningModal');
@@ -815,10 +855,12 @@
 
         function goToPublicSettings() {
             closeModal('publicWarningModal');
+            loadSettingsToUI(1);
             openModal('publicSettingsModal');
         }
 
         function goToPublicOffer() {
+            saveSettingsFromUI(1);
             closeModal('publicSettingsModal');
             openModal('publicOfferModal');
             // reset checkbox
@@ -856,6 +898,7 @@
             const btn = document.getElementById('applyActiveBtn');
             if(btn) btn.disabled = true;
             resetPublicActiveTabs();
+            loadSettingsToUI(2);
             openModal('publicActiveModal');
             
             const shareBadge = document.getElementById('badge-' + currentCameraId);
