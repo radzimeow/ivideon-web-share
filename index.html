@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivideon - Камеры</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-item active">
+                <i class="fas fa-video"></i>
+                <span>Камеры</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="far fa-bell"></i>
+                <span>События</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="fas fa-cloud-download-alt"></i>
+                <span>Экспорт<br>архива</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="fas fa-expand"></i>
+                <span>Лица</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="fas fa-chart-pie"></i>
+                <span>Аналитика</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="fas fa-fire"></i>
+                <span>Тепловые<br>карты</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="fas fa-cash-register"></i>
+                <span>Кассы</span>
+            </div>
+        </aside>
+
+        <div class="main-column">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="logo">ivideon</div>
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span>salesdemo@ivideon.com</span>
+                    <i class="far fa-question-circle"></i>
+                </div>
+            </header>
+
+            <!-- Subheader -->
+            <div class="subheader">
+                <h1 class="page-title">Камеры</h1>
+                <div class="top-tabs">
+                    <div class="tab active"><i class="fas fa-video"></i><span>КАМЕРЫ</span></div>
+                    <div class="tab"><i class="fas fa-th-large"></i><span>СВОДКА</span></div>
+                    <div class="tab"><i class="fas fa-home"></i><span>ОБЪЕКТЫ</span></div>
+                    <div class="tab"><i class="fas fa-th"></i><span>РАСКЛАДКИ</span></div>
+                    <div class="tab"><i class="fas fa-map-marker-alt"></i><span>НА КАРТЕ</span></div>
+                    <div class="tab"><i class="fas fa-hdd"></i><span>УСТРОЙСТВА</span></div>
+                    <div class="tab"><i class="fas fa-cloud"></i><span>CLOUD BRIDGE</span></div>
+                    <div class="tab"><i class="fas fa-chart-bar"></i><span>ОТЧЁТЫ</span></div>
+                </div>
+            </div>
+
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <div class="search-box">
+                    <input type="text" placeholder="Поиск камер и групп">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <div class="filters">
+                    <span class="filter-label">ФИЛЬТРЫ:</span>
+                    <span class="filter-pill">ГРУППЫ</span>
+                    <span class="filter-pill">ПАРАМЕТРЫ</span>
+                    <span class="filter-pill">УСЛУГИ</span>
+                    <span class="filter-pill">МЕТКИ</span>
+                    <span class="filter-pill">ПТЗ</span>
+                </div>
+                <div class="toolbar-actions">
+                    <button class="btn-add">ДОБАВИТЬ УСТРОЙСТВО</button>
+                    <button class="btn-icon"><i class="fas fa-sync-alt"></i></button>
+                    <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Tree Panel -->
+                <div class="tree-panel">
+                    <div class="tree-header">ВСЕ КАМЕРЫ</div>
+                    
+                    <div class="tree-node expanded">
+                        <i class="fas fa-chevron-down"></i>
+                        <span>Мои камеры</span>
+                    </div>
+                    
+                    <div class="tree-children">
+                        <div class="tree-node">
+                            <i class="fas fa-chevron-right"></i>
+                            <i class="far fa-folder" style="color: #a0a0a0;"></i>
+                            <span>Без группы</span>
+                        </div>
+                        
+                        <div class="tree-node expanded">
+                            <i class="fas fa-chevron-down"></i>
+                            <i class="far fa-folder" style="color: #a0a0a0;"></i>
+                            <span>4564564566</span>
+                        </div>
+                        
+                        <div class="tree-children">
+                            <div class="tree-node camera-node">
+                                <i class="fas fa-video text-green"></i>
+                                <span>FIC-2344PCMS/A</span>
+                                <i class="fas fa-exclamation-circle text-red pull-right"></i>
+                            </div>
+                            <div class="tree-node camera-node">
+                                <i class="fas fa-video text-green"></i>
+                                <span>FIC-2622C2MSZ4</span>
+                                <i class="fas fa-exclamation-circle text-red pull-right"></i>
+                            </div>
+                            <div class="tree-node camera-node">
+                                <i class="fas fa-video text-green"></i>
+                                <span>Ivideon-3230FMSD</span>
+                                <i class="fas fa-exclamation-circle text-red pull-right"></i>
+                            </div>
+                            <div class="tree-node camera-node">
+                                <i class="fas fa-video text-green"></i>
+                                <span>Ivideon-3230FWMSD</span>
+                                <i class="fas fa-exclamation-circle text-red pull-right"></i>
+                            </div>
+                            <div class="tree-node camera-node">
+                                <i class="fas fa-video text-green"></i>
+                                <span>Ivideon 3560ZMSD</span>
+                                <i class="fas fa-exclamation-circle text-red pull-right"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="tree-node expanded active-folder">
+                            <i class="fas fa-chevron-down"></i>
+                            <i class="far fa-folder" style="color: #a0a0a0;"></i>
+                            <span>Склад 1</span>
+                            <i class="fas fa-ellipsis-v pull-right" style="color: #999;"></i>
+                        </div>
+                        
+                        <div class="tree-children">
+                            <div class="tree-node camera-node">
+                                <i class="fas fa-video text-green"></i>
+                                <span>ANPR Ivideon-3560ZMSD</span>
+                            </div>
+                            <div class="tree-node camera-node">
+                                <i class="fas fa-video text-green"></i>
+                                <span>NBLC-4204Z-MSDV2</span>
+                                <i class="fas fa-exclamation-circle text-red pull-right"></i>
+                            </div>
+                            <div class="tree-node camera-node">
+                                <i class="fas fa-video text-green"></i>
+                                <span>RVI-2NCT2369(5-50)</span>
+                                <i class="fas fa-exclamation-circle text-red pull-right"></i>
+                            </div>
+                            <div class="tree-node">
+                                <i class="fas fa-chevron-right" style="visibility: hidden;"></i>
+                                <i class="far fa-folder" style="color: #a0a0a0;"></i>
+                                <span>Test</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tree-node">
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Переданные мне</span>
+                    </div>
+                </div>
+
+                <!-- Grid Panel -->
+                <div class="grid-panel">
+                    <div class="cards-grid">
+                        <!-- Card 1 -->
+                        <div class="camera-card">
+                            <div class="card-image img-1">
+                                <div class="badge-share" id="badge-cam1" style="display: none;"><i class="fas fa-share-alt"></i></div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-info">
+                                    <div class="card-title">ANPR Ivideon-3560ZMSD</div>
+                                    <div class="card-subtitle">Мои камеры / Склад 1</div>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="menu-trigger" onclick="toggleMenu(event, 'menu1')"><i class="fas fa-ellipsis-v"></i></button>
+                                    
+                                    <!-- Dropdown Menu -->
+                                    <div class="dropdown-menu" id="menu1">
+                                        <div class="dropdown-item"><i class="far fa-edit"></i> Переименовать</div>
+                                        <div class="dropdown-item"><i class="fas fa-wallet"></i> Тарифный план</div>
+                                        <div class="dropdown-item"><i class="fas fa-cloud"></i> Управление записью в облако</div>
+                                        <div class="dropdown-item"><i class="fas fa-cog"></i> Настройки камеры</div>
+                                        <div class="dropdown-item"><i class="far fa-bell"></i> Уведомление</div>
+                                        <div class="dropdown-item"><i class="fas fa-info-circle"></i> Информация о камере</div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item" onclick="openAccessModal('cam1', 'ANPR Ivideon-3560ZMSD')"><i class="fas fa-user-friends"></i> Права доступа</div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item"><i class="fas fa-sync-alt"></i> Перезагрузить устройство</div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item text-gray"><i class="far fa-trash-alt"></i> Удалить</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="camera-card">
+                            <div class="card-image img-2">
+                                <div class="badge-share" id="badge-cam2" style="display: none;"><i class="fas fa-share-alt"></i></div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-info">
+                                    <div class="card-title">NBLC-4204Z-MSDV2</div>
+                                    <div class="card-subtitle">Мои камеры / Склад 1</div>
+                                </div>
+                                <div class="card-actions">
+                                    <i class="fas fa-circle text-red" style="font-size: 6px; margin-right: 8px;"></i>
+                                    <button class="menu-trigger" onclick="toggleMenu(event, 'menu2')"><i class="fas fa-ellipsis-v"></i></button>
+                                    
+                                    <div class="dropdown-menu" id="menu2">
+                                        <div class="dropdown-item"><i class="far fa-edit"></i> Переименовать</div>
+                                        <div class="dropdown-item"><i class="fas fa-wallet"></i> Тарифный план</div>
+                                        <div class="dropdown-item"><i class="fas fa-cloud"></i> Управление записью в облако</div>
+                                        <div class="dropdown-item"><i class="fas fa-cog"></i> Настройки камеры</div>
+                                        <div class="dropdown-item"><i class="far fa-bell"></i> Уведомление</div>
+                                        <div class="dropdown-item"><i class="fas fa-info-circle"></i> Информация о камере</div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item" onclick="openAccessModal('cam2', 'NBLC-4204Z-MSDV2')"><i class="fas fa-user-friends"></i> Права доступа</div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item"><i class="fas fa-sync-alt"></i> Перезагрузить устройство</div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item text-gray"><i class="far fa-trash-alt"></i> Удалить</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="camera-card">
+                            <div class="card-image img-3">
+                                <div class="badge-share" id="badge-cam3" style="display: none;"><i class="fas fa-share-alt"></i></div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-info">
+                                    <div class="card-title">RVI-2NCT2369(5-50)</div>
+                                    <div class="card-subtitle">Мои камеры / Склад 1</div>
+                                </div>
+                                <div class="card-actions">
+                                    <i class="fas fa-circle text-red" style="font-size: 6px; margin-right: 8px;"></i>
+                                    <button class="menu-trigger" onclick="toggleMenu(event, 'menu3')"><i class="fas fa-ellipsis-v"></i></button>
+                                    
+                                    <div class="dropdown-menu" id="menu3">
+                                        <div class="dropdown-item"><i class="far fa-edit"></i> Переименовать</div>
+                                        <div class="dropdown-item"><i class="fas fa-wallet"></i> Тарифный план</div>
+                                        <div class="dropdown-item"><i class="fas fa-cloud"></i> Управление записью в облако</div>
+                                        <div class="dropdown-item"><i class="fas fa-cog"></i> Настройки камеры</div>
+                                        <div class="dropdown-item"><i class="far fa-bell"></i> Уведомление</div>
+                                        <div class="dropdown-item"><i class="fas fa-info-circle"></i> Информация о камере</div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item" onclick="openAccessModal('cam3', 'RVI-2NCT2369(5-50)')"><i class="fas fa-user-friends"></i> Права доступа</div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item"><i class="fas fa-sync-alt"></i> Перезагрузить устройство</div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item text-gray"><i class="far fa-trash-alt"></i> Удалить</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Права доступа -->
+    <div class="modal-overlay" id="accessModal">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Права доступа</h2>
+                <button class="modal-close" onclick="closeModal('accessModal')"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-info-block">
+                    <div class="info-title"><i class="fas fa-video"></i> <span id="dynamicCamName1">Этаж 1. Вход</span></div>
+                    <div class="info-path">Мои камеры > Analytics. Не удалять камеры. Возвращайте настройки в исходное состояние</div>
+                </div>
+                
+                <div class="modal-tabs">
+                    <div class="modal-tab active" onclick="switchModalTab(this, 'tab-direct')">ПРЯМОЙ ДОСТУП (5)</div>
+                    <div class="modal-tab" onclick="switchModalTab(this, 'tab-groups')">ЧЕРЕЗ ВЫШЕСТОЯЩИЕ ГРУППЫ (6)</div>
+                    <div class="modal-tab" onclick="switchModalTab(this, 'tab-objects')">ЧЕРЕЗ ОБЪЕКТЫ (0)</div>
+                </div>
+                
+                <!-- Tab Content: ПРЯМОЙ ДОСТУП -->
+                <div class="modal-tab-content active" id="tab-direct">
+                    <div class="modal-toolbar">
+                        <div class="search-box modal-search">
+                            <input type="text" placeholder="Поиск пользователей">
+                        </div>
+                        <div class="filters modal-filters">
+                            <span class="filter-label" style="margin-right: 10px;">ФИЛЬТРЫ:</span>
+                            <span class="filter-pill modal-pill">ТИП ПРАВ</span>
+                        </div>
+                    </div>
+                    
+                    <div class="user-list-container">
+                        <div class="user-list-scroll">
+                            <div class="user-item">
+                                <div class="user-icon"><i class="fas fa-user"></i></div>
+                                <div class="user-details">
+                                    <div class="user-name">person@ivideon.com</div>
+                                    <div class="user-roles">
+                                        <span><strong>Основные права:</strong> Администрирование (Все права)</span>
+                                        <span><strong>Видеоаналитика:</strong> Нет</span>
+                                    </div>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="user-item">
+                                <div class="user-icon"><i class="fas fa-user"></i></div>
+                                <div class="user-details">
+                                    <div class="user-name">person@ivideon.com</div>
+                                    <div class="user-roles">
+                                        <span><strong>Основные права:</strong> Архив · PTZ · События и уведомления</span>
+                                        <span><strong>Видеоаналитика:</strong> Распознавание лиц (Просмотр)</span>
+                                    </div>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="user-item">
+                                <div class="user-icon"><i class="fas fa-user"></i></div>
+                                <div class="user-details">
+                                    <div class="user-name">person@ivideon.com</div>
+                                    <div class="user-roles">
+                                        <span><strong>Основные права:</strong> Живое видео · Архив · PTZ · События и уведомления</span>
+                                        <span><strong>Видеоаналитика:</strong> Распознавание лиц (Администрирование)</span>
+                                    </div>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="user-item">
+                                <div class="user-icon"><i class="fas fa-user"></i></div>
+                                <div class="user-details">
+                                    <div class="user-name">person@ivideon.com</div>
+                                    <div class="user-roles">
+                                        <span><strong>Основные права:</strong> Живое видео · Архив</span>
+                                        <span><strong>Видеоаналитика:</strong> Нет</span>
+                                    </div>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content: ЧЕРЕЗ ГРУППЫ -->
+                <div class="modal-tab-content" id="tab-groups">
+                    <div class="modal-toolbar">
+                        <div class="search-box modal-search">
+                            <input type="text" placeholder="Поиск пользователей">
+                        </div>
+                        <div class="filters modal-filters">
+                            <span class="filter-label" style="margin-right: 10px;">ФИЛЬТРЫ:</span>
+                            <span class="filter-pill modal-pill">ТИП ПРАВ</span>
+                        </div>
+                    </div>
+                    
+                    <div class="user-list-container">
+                        <div class="user-list-scroll">
+                            <div class="user-item">
+                                <div class="user-icon"><i class="fas fa-user"></i></div>
+                                <div class="user-details">
+                                    <div class="user-name">a.fomichev+123321@ivideon.com</div>
+                                    <div class="user-path">Мои камеры &gt; Analytics. Не удалять камеры. Возвращайте настройки в исходно...</div>
+                                    <div class="user-roles">
+                                        <span><strong>Основные права:</strong> Живое видео, Архив, События и уведомления</span>
+                                        <span><strong>Видеоаналитика:</strong> Распознавание лиц (Просмотр)</span>
+                                    </div>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="user-item">
+                                <div class="user-icon"><i class="fas fa-user"></i></div>
+                                <div class="user-details">
+                                    <div class="user-name">a.fomichev@ivideon.com</div>
+                                    <div class="user-path">Мои камеры &gt; Analytics. Не удалять камеры. Возвращайте настройки в исходно...</div>
+                                    <div class="user-roles">
+                                        <span><strong>Основные права:</strong> Живое видео, Архив, События и уведомления</span>
+                                        <span><strong>Видеоаналитика:</strong> Нет</span>
+                                    </div>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="user-item">
+                                <div class="user-icon"><i class="fas fa-user"></i></div>
+                                <div class="user-details">
+                                    <div class="user-name">m.pupkova+321@ivideon.com</div>
+                                    <div class="user-path">Мои камеры &gt; Analytics. Не удалять камеры. Возвращайте настройки в исходно...</div>
+                                    <div class="user-roles">
+                                        <span><strong>Основные права:</strong> Живое видео, Архив, PTZ, События и уведомления</span>
+                                        <span><strong>Видеоаналитика:</strong> Нет</span>
+                                    </div>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content: ЧЕРЕЗ ОБЪЕКТЫ -->
+                <div class="modal-tab-content" id="tab-objects">
+                    <div class="modal-toolbar">
+                        <div class="search-box modal-search">
+                            <input type="text" placeholder="Поиск пользователей">
+                        </div>
+                        <div class="filters modal-filters">
+                            <span class="filter-label" style="margin-right: 10px;">ФИЛЬТРЫ:</span>
+                            <span class="filter-pill modal-pill">ТИП ПРАВ</span>
+                        </div>
+                    </div>
+                    
+                    <div class="user-list-container">
+                        <div class="user-list-scroll" style="display: flex; align-items: center; justify-content: center;">
+                            <div style="color: #888; font-size: 14px;">Нет прав, переданных через объекты.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="public-access-block" onclick="handlePublicAccessClick()">
+                    <div class="public-left">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Публичный доступ к камере</span>
+                    </div>
+                    <div class="public-right" id="publicAccessStatus">
+                        <span>Доступ закрыт</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn-outline" onclick="closeModal('accessModal')">ПЕРЕДАТЬ ПРАВА</button>
+                <button class="btn-primary" onclick="closeModal('accessModal')">ГОТОВО</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Публичный доступ (Warning Step) -->
+    <div class="modal-overlay" id="publicWarningModal">
+        <div class="modal-dialog public-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Публичный доступ к камере</h2>
+                <button class="modal-close" onclick="closeModal('publicWarningModal')"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body public-settings-body" style="padding: 0 32px 24px 32px; gap: 24px;">
+                <p class="public-text" style="margin: 0;">Публичный доступ к камере означает, что видео с неё сможет посмотреть кто угодно, без авторизации.</p>
+                <p class="public-text" style="margin: 0;">В соответствии с условиями обслуживания разрешается публиковать только видео с местами, открытыми для свободного посещения и/или видео публичных мероприятий.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-outline" onclick="closeModal('publicWarningModal')">ОТМЕНА</button>
+                <button class="btn-primary" onclick="goToPublicSettings()">ПОНЯТНО</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Публичный доступ (Settings Step) -->
+    <div class="modal-overlay" id="publicSettingsModal">
+        <div class="modal-dialog public-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Публичный доступ к камере</h2>
+                <button class="modal-close" onclick="closeModal('publicSettingsModal')"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body public-settings-body">
+                
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <div class="settings-title">Камера</div>
+                        <div class="settings-camera-name" style="position: relative;">
+                            <i class="fas fa-video"></i> <span id="dynamicCamName2">Этаж 1. Вход</span>
+                            <a href="#" class="rename-link" style="position: absolute; right: -30px;">Переименовать</a>
+                        </div>
+                        <div class="settings-desc">Название вашей камеры будет отображаться в публичном видео.</div>
+                    </div>
+                </div>
+
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <div class="settings-title">Звук в публичной трансляции</div>
+                        <div class="settings-desc">Включите, если хотите, чтобы зрители слышали звук с камеры.</div>
+                    </div>
+                    <div class="settings-toggle">
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-row">
+                    <div class="settings-info">
+                        <div class="settings-title">Доступ к архиву</div>
+                        <div class="settings-desc">Зрители смогут просматривать архив, начиная с даты включения этой опции. Более ранние записи будут недоступны.</div>
+                    </div>
+                    <div class="settings-toggle">
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px; width: 100%;">
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <div class="settings-title">Ссылка поверх видео</div>
+                            <div class="settings-desc">Привлеките людей на ваш сайт или в социальные сети, добавив ссылку к видео с этой камеры.</div>
+                        </div>
+                        <div class="settings-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" onchange="document.getElementById('linkBox').style.display = this.checked ? 'block' : 'none'">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="link-settings-box" id="linkBox" style="display: none; background: #f8f9fa; padding: 20px; border-radius: 6px;">
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #333;">Ссылка поверх видео</label>
+                            <input type="text" placeholder="Например, https://sanatoriy-more.ru" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #333;">Текст, который будет отображаться вместо адреса <span style="color: #999;">(необязательно)</span></label>
+                            <input type="text" placeholder="Например, Заказать путёвку в санаторий «Море»" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn-outline" onclick="closeModal('publicSettingsModal')">ОТМЕНА</button>
+                <button class="btn-primary" onclick="goToPublicOffer()">ДАЛЕЕ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Публичный доступ (Offer Step) -->
+    <div class="modal-overlay" id="publicOfferModal">
+        <div class="modal-dialog public-dialog">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center;">
+                    <button class="modal-back" onclick="goBackToPublicSettings()" style="background: none; border: none; font-size: 18px; color: #888; cursor: pointer; margin-right: 15px; outline: none;"><i class="fas fa-arrow-left"></i></button>
+                    <h2 class="modal-title">Публичный доступ к камере</h2>
+                </div>
+                <button class="modal-close" onclick="closeModal('publicOfferModal')"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body public-settings-body" style="padding: 0 32px 24px 32px; gap: 24px;">
+                <p class="public-text" style="margin: 0;">Для того, чтобы поделиться видео публично, необходимо принять условия оферты-поручения о соблюдении требований по сбору персональных данных.</p>
+                
+                <label class="offer-checkbox-container" style="display: flex; align-items: flex-start; cursor: pointer; margin-top: 0;">
+                    <input type="checkbox" id="offerCheckbox" onchange="document.getElementById('publishBtn').disabled = !this.checked;" style="width: 18px; height: 18px; margin-right: 12px; margin-top: 2px; cursor: pointer;">
+                    <span style="font-size: 15px; color: #333; line-height: 1.4;">Я ознакомился и принимаю <a href="#" style="color: #1ba0fa; text-decoration: none;">условия оферты</a></span>
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-outline" onclick="closeModal('publicOfferModal')">ОТМЕНА</button>
+                <button class="btn-primary" id="publishBtn" disabled onclick="publishCamera()" style="transition: opacity 0.2s;">ОПУБЛИКОВАТЬ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Публичный доступ (Active State) -->
+    <div class="modal-overlay" id="publicActiveModal">
+        <div class="modal-dialog public-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Публичный доступ к камере</h2>
+                <button class="modal-close" onclick="closeModal('publicActiveModal')"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body public-settings-body">
+                
+                <!-- Info Banner -->
+                <div class="public-banner">
+                    <div class="banner-icon"><i class="fas fa-user-friends"></i></div>
+                    <div class="banner-content">
+                        <div class="banner-title">Публичный доступ открыт</div>
+                        <div class="banner-text">Это значит, что трансляцию с камеры могут просматривать обладатели прямой ссылки или посетители сайта, куда встроено видео.</div>
+                        <a href="#" class="banner-link" onclick="openCloseAccessModal(); return false;">ЗАКРЫТЬ ДОСТУП</a>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="modal-tabs" style="margin-bottom: 0;">
+                    <div class="modal-tab active" onclick="switchActiveTab(this, 'active-tab-link')">ПУБЛИЧНАЯ ССЫЛКА</div>
+                    <div class="modal-tab" onclick="switchActiveTab(this, 'active-tab-settings')">НАСТРОЙКИ</div>
+                </div>
+
+                <!-- Tab: ПУБЛИЧНАЯ ССЫЛКА -->
+                <div class="modal-tab-content flex-content active" id="active-tab-link">
+                    <div class="form-group">
+                        <label class="form-label">Ссылка на камеру</label>
+                        <div class="input-with-copy">
+                            <input type="text" value="https://my.ivideon.com/cameras/groups" readonly>
+                            <button class="copy-btn"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Код для вставки</label>
+                        <div class="input-with-copy">
+                            <input type="text" value='<div class="block1">Lorem ipsum dolor sit amet, consectetuer...</div>' readonly>
+                            <button class="copy-btn"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Разрешение</label>
+                        <select class="form-select">
+                            <option>320x427</option>
+                            <option>640x480</option>
+                            <option>1280x720</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Tab: НАСТРОЙКИ -->
+                <div class="modal-tab-content flex-content" id="active-tab-settings">
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <div class="settings-title">Камера</div>
+                            <div class="settings-camera-name" style="position: relative;">
+                                <i class="fas fa-video"></i> <span id="dynamicCamName4">Этаж 1. Вход</span>
+                                <a href="#" class="rename-link" style="position: absolute; right: -30px;">Переименовать</a>
+                            </div>
+                            <div class="settings-desc">Название вашей камеры будет отображаться в публичном видео.</div>
+                        </div>
+                    </div>
+
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <div class="settings-title">Звук в публичной трансляции</div>
+                            <div class="settings-desc">Включите, если хотите, чтобы зрители слышали звук с камеры.</div>
+                        </div>
+                        <div class="settings-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked onchange="enableApplyButton()">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <div class="settings-title">Доступ к архиву</div>
+                            <div class="settings-desc">Зрители смогут просматривать архив, начиная с даты включения этой опции. Более ранние записи будут недоступны.</div>
+                        </div>
+                        <div class="settings-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked onchange="enableApplyButton()">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 8px; width: 100%;">
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <div class="settings-title">Ссылка поверх видео</div>
+                                <div class="settings-desc">Привлеките людей на ваш сайт или в социальные сети, добавив ссылку к видео с этой камеры.</div>
+                            </div>
+                            <div class="settings-toggle">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked onchange="document.getElementById('activeLinkBox').style.display = this.checked ? 'block' : 'none'; enableApplyButton();">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="link-settings-box" id="activeLinkBox" style="display: block; background: #f8f9fa; padding: 20px; border-radius: 6px;">
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #333;">Ссылка поверх видео</label>
+                                <input type="text" placeholder="Например, https://sanatoriy-more.ru" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;" oninput="enableApplyButton()">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #333;">Текст, который будет отображаться вместо адреса <span style="color: #999;">(необязательно)</span></label>
+                                <input type="text" placeholder="Например, Заказать путёвку в санаторий «Море»" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;" oninput="enableApplyButton()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer" style="justify-content: space-between;">
+                <button class="btn-text" style="color: #1ba0fa; background: none; border: none; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase;">ПРОСМОТР ТРАНСЛЯЦИИ</button>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-outline" onclick="closeModal('publicActiveModal')">ОТМЕНА</button>
+                    <button class="btn-primary" id="applyActiveBtn" disabled onclick="closeModal('publicActiveModal')">ПРИМЕНИТЬ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Закрыть доступ -->
+    <div class="modal-overlay" id="closeAccessModal">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Закрыть доступ</h2>
+                <button class="modal-close" onclick="cancelCloseAccess()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" style="padding: 0 32px 24px 32px;">
+                <div style="font-size: 15px; color: #444; line-height: 1.5;">
+                    Вы уверены, что хотите закрыть публичный доступ к камере <strong id="dynamicCamName3">Этаж 1. Вход</strong>?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-outline" onclick="cancelCloseAccess()">ОТМЕНА</button>
+                <button class="btn-primary" onclick="confirmCloseAccess()">ЗАКРЫТЬ ДОСТУП</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('open');
+            // Close any open dropdowns
+            const menus = document.querySelectorAll('.dropdown-menu');
+            menus.forEach(menu => menu.classList.remove('show'));
+        }
+
+        function closeModal(id) {
+            if(id) {
+                document.getElementById(id).classList.remove('open');
+            } else {
+                document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('open'));
+            }
+        }
+
+        const cameraStates = {
+            cam1: false,
+            cam2: false,
+            cam3: false
+        };
+        
+        let currentCameraId = null;
+
+        function openAccessModal(id, name) {
+            currentCameraId = id;
+            isPublicAccessOpen = cameraStates[id];
+            
+            const n1 = document.getElementById('dynamicCamName1');
+            const n2 = document.getElementById('dynamicCamName2');
+            const n3 = document.getElementById('dynamicCamName3');
+            const n4 = document.getElementById('dynamicCamName4');
+            
+            if(n1) n1.innerText = name;
+            if(n2) n2.innerText = name;
+            if(n3) n3.innerText = name;
+            if(n4) n4.innerText = name;
+
+            updatePublicAccessStatusUI();
+            openModal('accessModal');
+        }
+
+        function resetPublicActiveTabs() {
+            const modal = document.getElementById('publicActiveModal');
+            if (!modal) return;
+            const tabs = modal.querySelectorAll('.modal-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            if(tabs.length > 0) tabs[0].classList.add('active');
+            
+            const contents = modal.querySelectorAll('.modal-tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            const firstContent = document.getElementById('active-tab-link');
+            if(firstContent) firstContent.classList.add('active');
+        }
+
+        function handlePublicAccessClick() {
+            closeModal('accessModal'); // Close first modal
+            if (cameraStates[currentCameraId]) {
+                resetPublicActiveTabs();
+                openModal('publicActiveModal');
+            } else {
+                openModal('publicWarningModal');
+            }
+        }
+
+        function goToPublicSettings() {
+            closeModal('publicWarningModal');
+            openModal('publicSettingsModal');
+        }
+
+        function goToPublicOffer() {
+            closeModal('publicSettingsModal');
+            openModal('publicOfferModal');
+            // reset checkbox
+            document.getElementById('offerCheckbox').checked = false;
+            document.getElementById('publishBtn').disabled = true;
+        }
+
+        function goBackToPublicSettings() {
+            closeModal('publicOfferModal');
+            openModal('publicSettingsModal');
+        }
+
+        function enableApplyButton() {
+            const btn = document.getElementById('applyActiveBtn');
+            if(btn) btn.disabled = false;
+        }
+
+        function updatePublicAccessStatusUI() {
+            const statusBlock = document.getElementById('publicAccessStatus');
+            if (statusBlock) {
+                if (cameraStates[currentCameraId]) {
+                    statusBlock.innerHTML = `<span>Доступ открыт</span><i class="fas fa-chevron-right"></i>`;
+                    statusBlock.style.color = '#1ba0fa';
+                } else {
+                    statusBlock.innerHTML = `<span>Доступ закрыт</span><i class="fas fa-chevron-right"></i>`;
+                    statusBlock.style.color = '#888';
+                }
+            }
+        }
+
+        function publishCamera() {
+            cameraStates[currentCameraId] = true;
+            isPublicAccessOpen = true;
+            closeModal('publicOfferModal');
+            const btn = document.getElementById('applyActiveBtn');
+            if(btn) btn.disabled = true;
+            resetPublicActiveTabs();
+            openModal('publicActiveModal');
+            
+            const shareBadge = document.getElementById('badge-' + currentCameraId);
+            if (shareBadge) {
+                shareBadge.style.display = 'flex';
+            }
+            updatePublicAccessStatusUI();
+        }
+
+        function openCloseAccessModal() {
+            closeModal('publicActiveModal');
+            openModal('closeAccessModal');
+        }
+
+        function cancelCloseAccess() {
+            closeModal('closeAccessModal');
+            openModal('publicActiveModal');
+        }
+
+        function confirmCloseAccess() {
+            cameraStates[currentCameraId] = false;
+            isPublicAccessOpen = false;
+            closeModal('closeAccessModal');
+            const shareBadge = document.getElementById('badge-' + currentCameraId);
+            if (shareBadge) {
+                shareBadge.style.display = 'none';
+            }
+            updatePublicAccessStatusUI();
+        }
+
+        function switchActiveTab(tabElement, tabId) {
+            const tabs = document.getElementById('publicActiveModal').querySelectorAll('.modal-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabElement.classList.add('active');
+            
+            const contents = document.getElementById('publicActiveModal').querySelectorAll('.modal-tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function switchModalTab(tabElement, tabId) {
+            // Remove active class from all tabs in accessModal
+            const modal = document.getElementById('accessModal');
+            const tabs = modal.querySelectorAll('.modal-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            tabElement.classList.add('active');
+            
+            // Hide all tab contents in accessModal
+            const contents = modal.querySelectorAll('.modal-tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Show target tab content
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function toggleMenu(event, menuId) {
+            event.stopPropagation();
+            
+            // Close all other menus
+            const menus = document.querySelectorAll('.dropdown-menu');
+            menus.forEach(menu => {
+                if(menu.id !== menuId) {
+                    menu.classList.remove('show');
+                }
+            });
+            
+            // Toggle clicked menu
+            const menu = document.getElementById(menuId);
+            menu.classList.toggle('show');
+        }
+
+        // Close menu/modal when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-trigger') && !event.target.closest('.menu-trigger')) {
+                const menus = document.querySelectorAll('.dropdown-menu');
+                menus.forEach(menu => {
+                    menu.classList.remove('show');
+                });
+            }
+            
+            // Close modal if clicked on overlay
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>
