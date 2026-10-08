@@ -6,7 +6,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #333;
+    color: #31363F;
     font-size: 14px;
     background-color: #f5f6f8;
 }
@@ -110,7 +110,7 @@ body {
 .page-title {
     font-size: 20px;
     font-weight: 400;
-    color: #333;
+    color: #31363F;
 }
 
 .top-tabs {
@@ -124,7 +124,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0 15px;
-    color: #777;
+    color: #828894;
     cursor: pointer;
     border-bottom: 3px solid transparent;
     font-size: 10px;
@@ -135,7 +135,7 @@ body {
 
 .tab i {
     font-size: 18px;
-    color: #999;
+    color: #828894;
 }
 
 .tab.active {
@@ -182,7 +182,7 @@ body {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #999;
+    color: #828894;
     font-size: 14px;
 }
 
@@ -195,7 +195,7 @@ body {
 
 .filter-label {
     font-size: 11px;
-    color: #888;
+    color: #828894;
     font-weight: 600;
     margin-right: 5px;
 }
@@ -205,7 +205,7 @@ body {
     padding: 5px 12px;
     border: 1px solid #d1d5db;
     border-radius: 14px;
-    color: #555;
+    color: #31363F;
     cursor: pointer;
     font-weight: 500;
 }
@@ -243,7 +243,7 @@ body {
     border: 1px solid #d1d5db;
     background-color: #fff;
     border-radius: 50%;
-    color: #666;
+    color: #828894;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -272,7 +272,7 @@ body {
 
 .tree-header {
     font-size: 11px;
-    color: #888;
+    color: #828894;
     font-weight: 600;
     padding: 0 20px 10px;
     letter-spacing: 0.5px;
@@ -284,7 +284,7 @@ body {
     padding: 8px 20px;
     cursor: pointer;
     font-size: 13px;
-    color: #444;
+    color: #31363F;
 }
 
 .tree-node:hover {
@@ -293,7 +293,7 @@ body {
 
 .tree-node > i:first-child {
     width: 16px;
-    color: #888;
+    color: #828894;
     font-size: 10px;
     text-align: center;
     margin-right: 6px;
@@ -398,13 +398,13 @@ body {
 .card-title {
     font-weight: 500;
     font-size: 14px;
-    color: #222;
+    color: #31363F;
     margin-bottom: 4px;
 }
 
 .card-subtitle {
     font-size: 12px;
-    color: #888;
+    color: #828894;
 }
 
 .card-actions {
@@ -416,7 +416,7 @@ body {
 .menu-trigger {
     background: none;
     border: none;
-    color: #999;
+    color: #828894;
     cursor: pointer;
     padding: 4px 8px;
     font-size: 18px;
@@ -424,7 +424,7 @@ body {
 }
 
 .menu-trigger:hover {
-    color: #333;
+    color: #31363F;
 }
 
 /* Dropdown Menu */
@@ -459,7 +459,7 @@ body {
     align-items: center;
     cursor: pointer;
     font-size: 14px;
-    color: #333;
+    color: #31363F;
     transition: background 0.15s;
 }
 
@@ -470,7 +470,7 @@ body {
 .dropdown-item i {
     width: 24px;
     font-size: 16px;
-    color: #888;
+    color: #828894;
     margin-right: 12px;
     text-align: center;
 }
@@ -482,7 +482,7 @@ body {
 }
 
 .text-gray {
-    color: #666;
+    color: #828894;
 }
 
 
@@ -544,7 +544,7 @@ body {
 .modal-title {
     font-size: 22px;
     font-weight: 500;
-    color: #2c3138;
+    color: #31363F;
 }
 
 .modal-close {
@@ -553,7 +553,7 @@ body {
     background: none;
     border: none;
     font-size: 16px;
-    color: #888;
+    color: #A5AAB2;
     cursor: pointer;
     outline: none;
     display: flex;
@@ -563,7 +563,7 @@ body {
 }
 
 .modal-close:hover {
-    color: #333;
+    color: #31363F;
 }
 
 .modal-body {
@@ -582,21 +582,21 @@ body {
 .info-title {
     font-size: 15px;
     font-weight: 500;
-    color: #444;
+    color: #31363F;
     margin-bottom: 8px;
     display: flex;
     align-items: center;
 }
 
 .info-title i {
-    color: #999;
+    color: #828894;
     margin-right: 10px;
     font-size: 16px;
 }
 
 .info-path {
     font-size: 14px;
-    color: #777;
+    color: #828894;
     line-height: 1.4;
 }
 
@@ -610,7 +610,7 @@ body {
     padding: 10px 15px;
     font-size: 12px;
     font-weight: 600;
-    color: #666;
+    color: #828894;
     cursor: pointer;
     border-bottom: 3px solid transparent;
     margin-right: 10px;
@@ -619,7 +619,7 @@ body {
 }
 
 .modal-tab:hover {
-    color: #333;
+    color: #31363F;
 }
 
 .modal-tab.active {
@@ -675,7 +675,7 @@ body {
     border-radius: 18px;
     padding: 0;
     font-size: 11px;
-    color: #666;
+    color: #828894;
 }
 
 .user-list-container {
@@ -731,7 +731,7 @@ body {
 }
 .accordion-icon {
     font-size: 12px;
-    color: #666;
+    color: #A5AAB2;
     margin-right: 12px;
     width: 12px;
     text-align: center;
@@ -740,7 +740,7 @@ body {
 .accordion-title {
     font-size: 15px;
     font-weight: 500;
-    color: #2c3138;
+    color: #31363F;
 }
 .accordion-section.open .accordion-icon {
     transform: rotate(90deg);
@@ -774,7 +774,7 @@ body {
     align-items: center;
     margin-right: 8px;
     font-size: 12px;
-    color: #aaa;
+    color: #A5AAB2;
 }
 
 .user-details {
@@ -785,13 +785,13 @@ body {
 .user-name {
     font-size: 15px;
     line-height: 20px;
-    color: #444;
+    color: #31363F;
     margin-bottom: 4px;
 }
 
 .user-path {
     font-size: 13px;
-    color: #888;
+    color: #828894;
     margin-bottom: 6px;
     white-space: nowrap;
     overflow: hidden;
@@ -800,14 +800,14 @@ body {
 
 .user-roles {
     font-size: 13px;
-    color: #777;
+    color: #828894;
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
 .user-roles strong {
-    color: #555;
+    color: #31363F;
     font-weight: 500;
 }
 
@@ -820,14 +820,14 @@ body {
 .btn-icon-small {
     background: none;
     border: none;
-    color: #999;
+    color: #A5AAB2;
     cursor: pointer;
     font-size: 16px;
     padding: 4px;
 }
 
 .btn-icon-small:hover {
-    color: #555;
+    color: #31363F;
 }
 
 .public-access-block {
@@ -850,11 +850,11 @@ body {
     display: flex;
     align-items: center;
     font-size: 15px;
-    color: #333;
+    color: #31363F;
 }
 
 .public-left i {
-    color: #888;
+    color: #828894;
     margin-right: 12px;
     font-size: 18px;
 }
@@ -863,7 +863,7 @@ body {
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: #888;
+    color: #828894;
     font-weight: 500;
 }
 
@@ -928,7 +928,7 @@ body {
 
 .public-text {
     font-size: 15px;
-    color: #444;
+    color: #31363F;
     line-height: 1.6;
     margin: 0;
 }
@@ -960,20 +960,20 @@ body {
 .settings-title {
     font-size: 15px;
     font-weight: 600;
-    color: #2c3138;
+    color: #31363F;
     margin-bottom: 8px;
 }
 
 .settings-camera-name {
     font-size: 15px;
-    color: #333;
+    color: #31363F;
     margin-bottom: 8px;
     display: flex;
     align-items: center;
 }
 
 .settings-camera-name i {
-    color: #999;
+    color: #828894;
     margin-right: 12px;
 }
 
@@ -990,7 +990,7 @@ body {
 
 .settings-desc {
     font-size: 14px;
-    color: #777;
+    color: #828894;
     line-height: 1.5;
 }
 
@@ -1059,7 +1059,7 @@ input:checked + .slider:before {
 }
 
 .modal-back:hover {
-    color: #333 !important;
+    color: #31363F !important;
 }
 
 
@@ -1093,13 +1093,13 @@ input:checked + .slider:before {
 .banner-title {
     font-size: 15px;
     font-weight: 600;
-    color: #333;
+    color: #31363F;
     margin-bottom: 8px;
 }
 
 .banner-text {
     font-size: 14px;
-    color: #555;
+    color: #31363F;
     line-height: 1.5;
     margin-bottom: 16px;
 }
@@ -1120,7 +1120,7 @@ input:checked + .slider:before {
     display: block;
     font-size: 14px;
     font-weight: 600;
-    color: #333;
+    color: #31363F;
     margin-bottom: 8px;
 }
 
@@ -1137,7 +1137,7 @@ input:checked + .slider:before {
     border: 1px solid #d1d5db;
     border-radius: 4px;
     font-size: 14px;
-    color: #333;
+    color: #31363F;
     outline: none;
 }
 
@@ -1162,7 +1162,7 @@ input:checked + .slider:before {
     border: 1px solid #d1d5db;
     border-radius: 4px;
     font-size: 14px;
-    color: #333;
+    color: #31363F;
     outline: none;
     appearance: none;
     background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231ba0fa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 12px center;
@@ -1185,3 +1185,8 @@ input:checked + .slider:before {
 .modal-tab-content.flex-content > * {
     width: 100%;
 }
+
+
+
+
+
