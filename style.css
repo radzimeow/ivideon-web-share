@@ -700,7 +700,7 @@ body {
 .accordion-container {
     border: 1px solid #e0e0e0;
     border-radius: 6px;
-    margin-bottom: 12px;
+    margin-bottom: 32px;
     background: #fff;
     height: 350px;
     overflow-y: auto;
@@ -831,19 +831,20 @@ body {
 }
 
 .public-access-block {
-    background-color: #F7F7F8;
+    background-color: #FFF;
+    border: 1px solid #EEF0F2;
     border-radius: 8px;
     padding: 16px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    margin-bottom: 32px;
+    margin-top: 16px;
     transition: background 0.2s;
 }
 
 .public-access-block:hover {
-    background-color: #ebecef;
+    background-color: #EEF0F2;
 }
 
 .public-left {
@@ -1185,6 +1186,8 @@ input:checked + .slider:before {
 .modal-tab-content.flex-content > * {
     width: 100%;
 }
+
+
 
 
 
