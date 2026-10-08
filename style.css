@@ -767,10 +767,14 @@ body {
 }
 
 .user-icon {
-    width: 36px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
     font-size: 16px;
     color: #aaa;
-    padding-top: 2px;
 }
 
 .user-details {
@@ -780,6 +784,7 @@ body {
 
 .user-name {
     font-size: 15px;
+    line-height: 20px;
     color: #444;
     margin-bottom: 4px;
 }
