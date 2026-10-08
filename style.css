@@ -573,7 +573,7 @@ body {
 
 .modal-info-block {
     background-color: #F7F7F8;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 16px 20px;
     margin-bottom: 12px;
     margin-top: 8px;
@@ -832,7 +832,7 @@ body {
 
 .public-access-block {
     background-color: #F7F7F8;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 16px 20px;
     display: flex;
     justify-content: space-between;
