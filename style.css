@@ -689,7 +689,15 @@ body {
     border-radius: 6px;
     margin-bottom: 24px;
     background: #fff;
-    overflow: hidden;
+    height: 350px;
+    overflow-y: auto;
+}
+.accordion-container::-webkit-scrollbar {
+    width: 6px;
+}
+.accordion-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
 }
 .accordion-section {
     border-bottom: 1px solid #e0e0e0;
