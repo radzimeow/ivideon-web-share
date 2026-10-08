@@ -538,7 +538,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 32px;
+    padding: 32px 32px 16px 32px;
 }
 
 .modal-title {
@@ -548,12 +548,18 @@ body {
 }
 
 .modal-close {
+    width: 32px;
+    height: 32px;
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
     color: #888;
     cursor: pointer;
     outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
 .modal-close:hover {
@@ -570,7 +576,7 @@ body {
     border-radius: 6px;
     padding: 16px 20px;
     margin-bottom: 12px;
-    margin-top: -16px;
+    margin-top: 8px;
 }
 
 .info-title {
