@@ -855,9 +855,14 @@ body {
 }
 
 .public-left i {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #A5AAB2;
     margin-right: 12px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .public-right {
@@ -869,6 +874,11 @@ body {
 }
 
 .public-right i {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 10px;
     font-size: 14px;
 }
