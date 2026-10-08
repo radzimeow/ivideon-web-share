@@ -574,7 +574,7 @@ body {
 .modal-info-block {
     background-color: #F7F7F8;
     border-radius: 8px;
-    padding: 16px 20px;
+    padding: 16px;
     margin-bottom: 12px;
     margin-top: 8px;
 }
@@ -834,7 +834,7 @@ body {
     background-color: #FFF;
     border: 1px solid #EEF0F2;
     border-radius: 8px;
-    padding: 16px 20px;
+    padding: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
