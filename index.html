@@ -298,26 +298,24 @@
                     <div class="info-path">Мои камеры > Analytics. Не удалять камеры. Возвращайте настройки в исходное состояние</div>
                 </div>
                 
-                <div class="modal-tabs">
-                    <div class="modal-tab active" onclick="switchModalTab(this, 'tab-direct')">ПРЯМОЙ ДОСТУП (5)</div>
-                    <div class="modal-tab" onclick="switchModalTab(this, 'tab-groups')">ЧЕРЕЗ ВЫШЕСТОЯЩИЕ ГРУППЫ (6)</div>
-                    <div class="modal-tab" onclick="switchModalTab(this, 'tab-objects')">ЧЕРЕЗ ОБЪЕКТЫ (0)</div>
-                </div>
-                
-                <!-- Tab Content: ПРЯМОЙ ДОСТУП -->
-                <div class="modal-tab-content active" id="tab-direct">
-                    <div class="modal-toolbar">
-                        <div class="search-box modal-search">
-                            <input type="text" placeholder="Поиск пользователей">
-                        </div>
-                        <div class="filters modal-filters">
-                            <span class="filter-label" style="margin-right: 10px;">ФИЛЬТРЫ:</span>
-                            <span class="filter-pill modal-pill">ТИП ПРАВ</span>
-                        </div>
+                <div class="modal-toolbar" style="margin-top: 24px;">
+                    <div class="search-box modal-search">
+                        <input type="text" placeholder="Поиск пользователей">
                     </div>
-                    
-                    <div class="user-list-container">
-                        <div class="user-list-scroll">
+                    <div class="filters modal-filters">
+                        <span class="filter-label" style="margin-right: 10px;">ФИЛЬТРЫ:</span>
+                        <span class="filter-pill modal-pill">ТИП ПРАВ</span>
+                    </div>
+                </div>
+
+                <div class="accordion-container">
+                    <!-- ПРЯМОЙ ДОСТУП -->
+                    <div class="accordion-section open">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <i class="fas fa-chevron-right accordion-icon"></i>
+                            <span class="accordion-title">Прямой доступ (5)</span>
+                        </div>
+                        <div class="accordion-body">
                             <div class="user-item">
                                 <div class="user-icon"><i class="fas fa-user"></i></div>
                                 <div class="user-details">
@@ -375,22 +373,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Tab Content: ЧЕРЕЗ ГРУППЫ -->
-                <div class="modal-tab-content" id="tab-groups">
-                    <div class="modal-toolbar">
-                        <div class="search-box modal-search">
-                            <input type="text" placeholder="Поиск пользователей">
+                    <!-- ЧЕРЕЗ ГРУППЫ -->
+                    <div class="accordion-section">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <i class="fas fa-chevron-right accordion-icon"></i>
+                            <span class="accordion-title">Через вышестоящие группы (6)</span>
                         </div>
-                        <div class="filters modal-filters">
-                            <span class="filter-label" style="margin-right: 10px;">ФИЛЬТРЫ:</span>
-                            <span class="filter-pill modal-pill">ТИП ПРАВ</span>
-                        </div>
-                    </div>
-                    
-                    <div class="user-list-container">
-                        <div class="user-list-scroll">
+                        <div class="accordion-body" style="display: none;">
                             <div class="user-item">
                                 <div class="user-icon"><i class="fas fa-user"></i></div>
                                 <div class="user-details">
@@ -437,23 +427,15 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Tab Content: ЧЕРЕЗ ОБЪЕКТЫ -->
-                <div class="modal-tab-content" id="tab-objects">
-                    <div class="modal-toolbar">
-                        <div class="search-box modal-search">
-                            <input type="text" placeholder="Поиск пользователей">
+                    <!-- ЧЕРЕЗ ОБЪЕКТЫ -->
+                    <div class="accordion-section">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <i class="fas fa-chevron-right accordion-icon"></i>
+                            <span class="accordion-title">Через объекты (0)</span>
                         </div>
-                        <div class="filters modal-filters">
-                            <span class="filter-label" style="margin-right: 10px;">ФИЛЬТРЫ:</span>
-                            <span class="filter-pill modal-pill">ТИП ПРАВ</span>
-                        </div>
-                    </div>
-                    
-                    <div class="user-list-container">
-                        <div class="user-list-scroll" style="display: flex; align-items: center; justify-content: center;">
-                            <div style="color: #888; font-size: 14px;">Нет прав, переданных через объекты.</div>
+                        <div class="accordion-body" style="display: none;">
+                            <div style="color: #888; font-size: 14px; text-align: center; padding: 24px 0;">Нет прав, переданных через объекты.</div>
                         </div>
                     </div>
                 </div>
@@ -471,9 +453,11 @@
                 
             </div>
             
-            <div class="modal-footer">
-                <button class="btn-outline" onclick="closeModal('accessModal')">ПЕРЕДАТЬ ПРАВА</button>
-                <button class="btn-primary" onclick="closeModal('accessModal')">ГОТОВО</button>
+            <div class="modal-footer" style="justify-content: flex-end;">
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-outline" style="color: #1ba0fa; border-color: #1ba0fa;" onclick="closeModal('accessModal')">ПЕРЕДАТЬ ПРАВА</button>
+                    <button class="btn-primary" onclick="closeModal('accessModal')">ГОТОВО</button>
+                </div>
             </div>
         </div>
     </div>
@@ -964,6 +948,18 @@
             const contents = document.getElementById('publicActiveModal').querySelectorAll('.modal-tab-content');
             contents.forEach(content => content.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
+        }
+
+        function toggleAccordion(header) {
+            const section = header.parentElement;
+            const body = section.querySelector('.accordion-body');
+            if (section.classList.contains('open')) {
+                section.classList.remove('open');
+                body.style.display = 'none';
+            } else {
+                section.classList.add('open');
+                body.style.display = 'block';
+            }
         }
 
         function switchModalTab(tabElement, tabId) {
