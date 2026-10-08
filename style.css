@@ -572,7 +572,7 @@ body {
 }
 
 .modal-info-block {
-    background-color: #f5f6f8;
+    background-color: #F7F7F8;
     border-radius: 6px;
     padding: 16px 20px;
     margin-bottom: 12px;
@@ -831,7 +831,7 @@ body {
 }
 
 .public-access-block {
-    background-color: #f5f6f8;
+    background-color: #F7F7F8;
     border-radius: 6px;
     padding: 16px 20px;
     display: flex;
@@ -1066,7 +1066,7 @@ input:checked + .slider:before {
 /* Active Public Modal */
 .public-banner {
     display: flex;
-    background-color: #f5f6f8;
+    background-color: #F7F7F8;
     border-radius: 8px;
     padding: 24px;
     align-items: flex-start;
