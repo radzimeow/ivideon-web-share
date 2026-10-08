@@ -589,7 +589,10 @@
     <div class="modal-overlay" id="publicActiveModal">
         <div class="modal-dialog public-dialog">
             <div class="modal-header">
-                <h2 class="modal-title">Публичный доступ к камере</h2>
+                <h2 class="modal-title" style="display: flex; align-items: center; gap: 16px;">
+                    <button style="background: none; border: none; cursor: pointer; color: #888; font-size: 18px;" onclick="goBackToAccessModal()"><i class="fas fa-arrow-left"></i></button>
+                    Публичный доступ к камере
+                </h2>
                 <button class="modal-close" onclick="closeModal('publicActiveModal')"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body public-settings-body">
@@ -854,14 +857,19 @@
         }
 
         function handlePublicAccessClick() {
-            closeModal('accessModal'); // Close first modal
             if (cameraStates[currentCameraId]) {
+                closeModal('accessModal');
                 resetPublicActiveTabs();
                 loadSettingsToUI(2);
                 openModal('publicActiveModal');
             } else {
                 openModal('publicWarningModal');
             }
+        }
+
+        function goBackToAccessModal() {
+            closeModal('publicActiveModal');
+            openModal('accessModal');
         }
 
         function goToPublicSettings() {
@@ -906,6 +914,7 @@
             cameraStates[currentCameraId] = true;
             isPublicAccessOpen = true;
             closeModal('publicOfferModal');
+            closeModal('accessModal'); // replace accessModal
             const btn = document.getElementById('applyActiveBtn');
             if(btn) btn.disabled = true;
             resetPublicActiveTabs();
@@ -938,6 +947,7 @@
                 shareBadge.style.display = 'none';
             }
             updatePublicAccessStatusUI();
+            openModal('accessModal');
         }
 
         function switchActiveTab(tabElement, tabId) {
