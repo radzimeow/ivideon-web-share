@@ -496,13 +496,18 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1000;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
     padding: 0;
     overflow-y: auto;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay::before,
+.modal-overlay::after {
+    content: '';
+    margin: auto;
 }
 
 .modal-overlay.open {
@@ -521,7 +526,8 @@ body {
     transform: scale(0.97);
     transition: transform 0.25s ease;
     overflow: hidden;
-    margin: 40px auto;
+    flex-shrink: 0;
+    margin: 0 auto;
 }
 
 .modal-overlay.open .modal-dialog {
