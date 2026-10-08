@@ -569,7 +569,8 @@ body {
     background-color: #f5f6f8;
     border-radius: 6px;
     padding: 16px 20px;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+    margin-top: -16px;
 }
 
 .info-title {
@@ -638,7 +639,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     gap: 24px;
 }
 
@@ -693,7 +694,7 @@ body {
 .accordion-container {
     border: 1px solid #e0e0e0;
     border-radius: 6px;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     background: #fff;
     height: 350px;
     overflow-y: auto;
@@ -826,7 +827,7 @@ body {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     transition: background 0.2s;
 }
 
