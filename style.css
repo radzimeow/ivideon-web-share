@@ -498,7 +498,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 40px 0;
+    padding: 0;
     overflow-y: auto;
     opacity: 0;
     visibility: hidden;
@@ -521,7 +521,7 @@ body {
     transform: scale(0.97);
     transition: transform 0.25s ease;
     overflow: hidden;
-    margin: auto;
+    margin: 40px auto;
 }
 
 .modal-overlay.open .modal-dialog {
