@@ -1,4 +1,4 @@
-﻿* {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -643,7 +643,7 @@ body {
 
 .modal-toolbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 12px;
     gap: 24px;
@@ -652,7 +652,6 @@ body {
 .modal-search {
     width: 277px;
     flex: none;
-    margin-right: 24px;
 }
 
 .modal-search input {
@@ -1228,6 +1227,7 @@ input:checked + .slider:before {
     font-weight: 400;
     margin-bottom: 0;
 }
+
 
 
 
