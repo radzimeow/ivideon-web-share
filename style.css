@@ -1,4 +1,4 @@
-﻿* {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -650,8 +650,8 @@ body {
 }
 
 .modal-search {
-    width: 407px;
-    flex: none;
+    flex: 1;
+    margin-right: 16px;
 }
 
 .modal-search input {
@@ -667,7 +667,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: auto; padding: 0 12px;
+    width: auto; padding: 0 12px; white-space: nowrap; flex-shrink: 0;
     height: 36px;
     box-sizing: border-box;
     background: #fff;
@@ -1207,6 +1207,7 @@ input:checked + .slider:before {
 
 .modal-info-block-new {
     margin-bottom: 4px;
+    padding: 12px !important;
 }
 .public-access-block-new {
     background-color: #F7F7F8 !important;
@@ -1216,4 +1217,9 @@ input:checked + .slider:before {
 }
 .public-access-block-new:hover {
     background-color: #ebecef !important;
+}
+
+
+.modal-info-block-new .info-title {
+    font-weight: 400;
 }
