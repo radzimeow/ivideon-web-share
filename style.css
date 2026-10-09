@@ -1,4 +1,4 @@
-* {
+﻿* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -650,8 +650,9 @@ body {
 }
 
 .modal-search {
-    flex: 1;
-    margin-right: 16px;
+    width: 277px;
+    flex: none;
+    margin-right: 24px;
 }
 
 .modal-search input {
@@ -667,15 +668,18 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: auto; padding: 0 12px; white-space: nowrap; flex-shrink: 0;
+    width: auto;
     height: 36px;
     box-sizing: border-box;
     background: #fff;
     border: 1px solid #d1d5db;
     border-radius: 18px;
-    padding: 0;
-    font-size: 11px;
+    padding: 0 12px;
     color: #828894;
+    font-size: 11px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    cursor: pointer;
 }
 
 .user-list-container {
@@ -1222,4 +1226,8 @@ input:checked + .slider:before {
 
 .modal-info-block-new .info-title {
     font-weight: 400;
+    margin-bottom: 0;
 }
+
+
+
