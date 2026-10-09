@@ -307,11 +307,11 @@
             </div>
             
             <div class="modal-body">
-                <div class="modal-info-block">
+                <div class="modal-info-block modal-info-block-new">
                     <div class="info-title"><i class="fas fa-video"></i> <span id="dynamicCamName1New">Этаж 1. Вход</span></div>
                 </div>
 
-                <div class="public-access-block" onclick="handlePublicAccessClick()">
+                <div class="public-access-block public-access-block-new" onclick="handlePublicAccessClick()">
                     <div class="public-left">
                         <i class="fas fa-share-nodes"></i>
                         <span>Публичный доступ к камере</span>
@@ -326,7 +326,7 @@
                     <div class="search-box modal-search">
                         <input type="text" placeholder="Поиск пользователей">
                     </div>
-                    <div class="filters modal-filters">
+                    <div class="filters modal-filters" style="flex-shrink: 0;">
                         <span class="filter-label" style="margin-right: 10px;">ФИЛЬТРЫ:</span>
                         <span class="filter-pill modal-pill" style="margin-right: 8px;">ТИПЫ ПРАВ</span>
                         <span class="filter-pill modal-pill">ТИПЫ ДОСТУПА</span>
@@ -949,7 +949,7 @@
             closeModal('forkModal');
             let nNew = document.getElementById('dynamicCamName1New');
             let nOld = document.getElementById('dynamicCamName1');
-            if(nNew && nOld) nNew.innerText = nOld.innerText;
+            if(nNew && nOld) nNew.textContent = nOld.textContent;
             openModal('accessModalNew');
         }
         function openAccessModal(id, name) {
@@ -1149,6 +1149,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
