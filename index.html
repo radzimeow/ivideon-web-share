@@ -407,7 +407,7 @@
                 </div>
             </div> <!-- End Main View -->
             
-            <div id="accessModalNewSettingsView" style="display: none; background: #fff; width: 100%; height: 100%; flex-direction: column;">
+            <div id="accessModalNewSettingsView" style="display: none; background: #fff; flex-direction: column;">
                 <div class="modal-header">
                     <button class="modal-close" style="position: static; margin-right: 16px; margin-top: 0; margin-left: -8px; color: #888; font-size: 18px;" onclick="goBackToMainView()"><i class="fas fa-arrow-left"></i></button>
                     <h2 class="modal-title">Настройки публичного доступа</h2>
@@ -1070,7 +1070,7 @@
             if (cameraStates[currentCameraId]) {
                 if (isNewModal) {
                     document.getElementById('accessModalNewMainView').style.display = 'none';
-                    document.getElementById('accessModalNewSettingsView').style.display = 'block';
+                    document.getElementById('accessModalNewSettingsView').style.display = 'flex';
                 } else {
                     closeModal('accessModal');
                     resetPublicActiveTabs();
