@@ -404,6 +404,82 @@
                 </div>
             </div> <!-- End Main View -->
             
+            <div id="accessModalNewSettingsView" style="display: none; background: #fff; flex-direction: column;">
+                <div class="modal-header">
+                    <button class="modal-close" style="position: static; margin-right: 16px; margin-top: 0; margin-left: -8px; color: #888; font-size: 18px;" onclick="goBackToMainView()"><i class="fas fa-arrow-left"></i></button>
+                    <h2 class="modal-title" style="flex: 1;">Настройки публичного доступа</h2>
+                </div>
+                <div class="modal-body public-settings-body">
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <div class="settings-title">Камера</div>
+                            <div class="settings-camera-name" style="position: relative;">
+                                <i class="fas fa-video"></i> <span id="new_dynamicCamName2">Этаж 1. Вход</span>
+                                <a href="#" class="rename-link" style="position: absolute; right: -30px;">Переименовать</a>
+                            </div>
+                            <div class="settings-desc">Название вашей камеры будет отображаться в публичном видео.</div>
+                        </div>
+                    </div>
+
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <div class="settings-title">Звук в публичной трансляции</div>
+                            <div class="settings-desc">Включите, если хотите, чтобы зрители слышали звук с камеры.</div>
+                        </div>
+                        <div class="settings-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="new_setting-sound-1">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <div class="settings-title">Доступ к архиву</div>
+                            <div class="settings-desc">Зрители смогут просматривать архив, начиная с даты включения этой опции. Более ранние записи будут недоступны.</div>
+                        </div>
+                        <div class="settings-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="new_setting-archive-1">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 8px; width: 100%;">
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <div class="settings-title">Ссылка поверх видео</div>
+                                <div class="settings-desc">Привлеките людей на ваш сайт или в социальные сети, добавив ссылку к видео с этой камеры.</div>
+                            </div>
+                            <div class="settings-toggle">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="new_setting-link-1" onchange="document.getElementById('new_linkBox').style.display = this.checked ? 'block' : 'none'">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="link-settings-box" id="new_linkBox" style="display: none; background: #F7F7F8; padding: 20px; border-radius: 8px;">
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #31363F;">Ссылка поверх видео</label>
+                                <input type="text" id="new_setting-link-url-1" placeholder="Например, https://sanatoriy-more.ru" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #31363F;">Текст, который будет отображаться вместо адреса <span style="color: #999;">(необязательно)</span></label>
+                                <input type="text" id="new_setting-link-text-1" placeholder="Например, Заказать путёвку в санаторий «Море»" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-outline" onclick="goBackToMainView()">ОТМЕНА</button>
+                    <button class="btn-primary" onclick="goBackToMainView()">ГОТОВО</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="modal-overlay" id="accessModal">
         <div class="modal-dialog">
@@ -947,7 +1023,7 @@
 
                 function openOldAccessModal() {
             closeModal('forkModal');
-            openModal(lastAccessModal);
+            openModal('accessModal');
         }
         function openNewAccessModal() {
             closeModal('forkModal');
@@ -987,19 +1063,30 @@
             if(firstContent) firstContent.classList.add('active');
         }
         function handlePublicAccessClick() {
+            let isNewModal = document.getElementById('accessModalNew').classList.contains('open');
             if (cameraStates[currentCameraId]) {
-                closeModal(lastAccessModal);
-                resetPublicActiveTabs();
-                loadSettingsToUI(2);
-                openModal("publicActiveModal");
+                if (isNewModal) {
+                    document.getElementById('accessModalNewMainView').style.display = 'none';
+                    document.getElementById('accessModalNewSettingsView').style.display = 'flex';
+                } else {
+                    closeModal('accessModal');
+                    resetPublicActiveTabs();
+                    loadSettingsToUI(2);
+                    openModal('publicActiveModal');
+                }
             } else {
-                openModal("publicWarningModal");
+                openModal('publicWarningModal');
             }
         }
-        
+
+        function goBackToMainView() {
+            document.getElementById('accessModalNewSettingsView').style.display = 'none';
+            document.getElementById('accessModalNewMainView').style.display = 'block';
+        }
+
         function goBackToAccessModal() {
             closeModal('publicActiveModal');
-            openModal(lastAccessModal);
+            openModal('accessModal');
         }
 
         function goToPublicSettings() {
@@ -1060,12 +1147,15 @@
             isPublicAccessOpen = true;
             closeModal("publicOfferModal");
             
-            closeModal(lastAccessModal);
-            const btn = document.getElementById("applyActiveBtn");
-            if(btn) btn.disabled = true;
-            resetPublicActiveTabs();
-            loadSettingsToUI(2);
-            openModal("publicActiveModal");
+            let isNewModal = document.getElementById("accessModalNew").classList.contains("open");
+            if (!isNewModal) {
+                closeModal("accessModal");
+                const btn = document.getElementById("applyActiveBtn");
+                if(btn) btn.disabled = true;
+                resetPublicActiveTabs();
+                loadSettingsToUI(2);
+                openModal("publicActiveModal");
+            }
             
             const shareBadge = document.getElementById("badge-" + currentCameraId);
             if (shareBadge) {
@@ -1073,7 +1163,7 @@
             }
             updatePublicAccessStatusUI();
         }
-        
+
         function openCloseAccessModal() {
             closeModal('publicActiveModal');
             openModal('closeAccessModal');
@@ -1093,7 +1183,7 @@
                 shareBadge.style.display = 'none';
             }
             updatePublicAccessStatusUI();
-            openModal(lastAccessModal);
+            openModal('accessModal');
         }
 
         function switchActiveTab(tabElement, tabId) {
