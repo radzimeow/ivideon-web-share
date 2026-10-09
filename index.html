@@ -304,10 +304,7 @@
         <div class="modal-dialog" id="accessModalNewContent" style="position: relative;">
                         <div id="accessModalNewMainView">
                 <div class="modal-header">
-                    <div style="display: flex; align-items: center;">
-                        <button class="modal-back" onclick="closeModal('accessModalNew'); openModal('forkModal');" style="background: none; border: none; font-size: 18px; color: #888; cursor: pointer; margin-right: 15px; outline: none;"><i class="fas fa-arrow-left"></i></button>
-                        <h2 class="modal-title">Права доступа</h2>
-                    </div>
+                    <h2 class="modal-title">Права доступа</h2>
                     <button class="modal-close" onclick="closeModal('accessModalNew')"><i class="fas fa-times"></i></button>
                 </div>
                 
@@ -410,7 +407,7 @@
             <div id="accessModalNewSettingsView" style="display: none; background: #fff; flex-direction: column;">
                 <div class="modal-header">
                     <button class="modal-close" style="position: static; margin-right: 16px; margin-top: 0; margin-left: -8px; color: #888; font-size: 18px;" onclick="goBackToMainView()"><i class="fas fa-arrow-left"></i></button>
-                    <h2 class="modal-title">Настройки публичного доступа</h2>
+                    <h2 class="modal-title" style="flex: 1;">Настройки публичного доступа</h2>
                 </div>
                 <div class="modal-body public-settings-body">
                     <div class="settings-row">
@@ -1119,13 +1116,10 @@
         function updatePublicAccessStatusUI() {
             const statusBlock = document.getElementById("publicAccessStatus");
             const statusBlockNew = document.getElementById("publicAccessStatusNew");
-            const openHTML = '<span>Доступ открыт</span><i class="fas fa-chevron-right" style="margin-left: 8px; color: #A5AAB2;"></i>';
-            const closedHTML = '<span>Доступ закрыт</span><i class="fas fa-chevron-right" style="margin-left: 8px; color: #A5AAB2;"></i>';
             
-            const iconNew = document.querySelector("#accessModalNew .public-icon");
-            const titleNew = document.querySelector("#accessModalNew .public-title");
-            const iconOld = document.querySelector("#accessModal .public-icon");
-            const titleOld = document.querySelector("#accessModal .public-title");
+            // The chevron should also be blue when open
+            const openHTML = '<span>Доступ открыт</span><i class="fas fa-chevron-right" style="margin-left: 8px; color: #1ba0fa;"></i>';
+            const closedHTML = '<span>Доступ закрыт</span><i class="fas fa-chevron-right" style="margin-left: 8px; color: #A5AAB2;"></i>';
 
             if (cameraStates[currentCameraId]) {
                 if (statusBlock) {
@@ -1136,10 +1130,6 @@
                     statusBlockNew.innerHTML = openHTML;
                     statusBlockNew.style.color = "#1ba0fa";
                 }
-                if(iconNew) iconNew.style.color = "#1ba0fa";
-                if(titleNew) titleNew.style.color = "#1ba0fa";
-                if(iconOld) iconOld.style.color = "#1ba0fa";
-                if(titleOld) titleOld.style.color = "#1ba0fa";
             } else {
                 if (statusBlock) {
                     statusBlock.innerHTML = closedHTML;
@@ -1149,10 +1139,6 @@
                     statusBlockNew.innerHTML = closedHTML;
                     statusBlockNew.style.color = "#828894";
                 }
-                if(iconNew) iconNew.style.color = "#A5AAB2";
-                if(titleNew) titleNew.style.color = "#31363F";
-                if(iconOld) iconOld.style.color = "#A5AAB2";
-                if(titleOld) titleOld.style.color = "#31363F";
             }
         }
 
