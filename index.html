@@ -1159,18 +1159,24 @@
         function publishCamera() {
             cameraStates[currentCameraId] = true;
             isPublicAccessOpen = true;
-            closeModal('publicOfferModal');
-            closeModal('accessModal'); // replace accessModal
-            const btn = document.getElementById('applyActiveBtn');
-            if(btn) btn.disabled = true;
-            resetPublicActiveTabs();
-            loadSettingsToUI(2);
-            openModal('publicActiveModal');
+            closeModal("publicOfferModal");
             
-            const shareBadge = document.getElementById('badge-' + currentCameraId);
-            if (shareBadge) {
-                shareBadge.style.display = 'flex';
+            let isNewModal = document.getElementById("accessModalNew").classList.contains("open");
+            if (!isNewModal) {
+                closeModal("accessModal");
+                const btn = document.getElementById("applyActiveBtn");
+                if(btn) btn.disabled = true;
+                resetPublicActiveTabs();
+                loadSettingsToUI(2);
+                openModal("publicActiveModal");
             }
+            
+            const shareBadge = document.getElementById("badge-" + currentCameraId);
+            if (shareBadge) {
+                shareBadge.style.display = "flex";
+            }
+            updatePublicAccessStatusUI();
+        }
             updatePublicAccessStatusUI();
         }
 
