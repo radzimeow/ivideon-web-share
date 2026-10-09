@@ -309,18 +309,17 @@
             <div class="modal-body">
                 <div class="modal-info-block">
                     <div class="info-title"><i class="fas fa-video"></i> <span id="dynamicCamName1New">Этаж 1. Вход</span></div>
-                    <div class="info-path">Мои камеры > Analytics. Не удалять камеры. Возвращайте настройки в исходное состояние</div>
+                </div>
 
                 <div class="public-access-block" onclick="handlePublicAccessClick()">
                     <div class="public-left">
-                        <i class="fas fa-share-alt"></i>
+                        <i class="fas fa-share-nodes"></i>
                         <span>Публичный доступ к камере</span>
                     </div>
-                    <div class="public-right" id="publicAccessStatus">
+                    <div class="public-right" id="publicAccessStatusNew">
                         <span>Доступ закрыт</span>
                         <i class="fas fa-chevron-right"></i>
                     </div>
-                </div>
                 </div>
                 
                 <div class="modal-toolbar">
@@ -329,145 +328,71 @@
                     </div>
                     <div class="filters modal-filters">
                         <span class="filter-label" style="margin-right: 10px;">ФИЛЬТРЫ:</span>
-                        <span class="filter-pill modal-pill">ТИП ПРАВ</span>
+                        <span class="filter-pill modal-pill" style="margin-right: 8px;">ТИПЫ ПРАВ</span>
+                        <span class="filter-pill modal-pill">ТИПЫ ДОСТУПА</span>
                     </div>
                 </div>
 
-                <div class="accordion-container">
-                    <!-- ПРЯМОЙ ДОСТУП -->
-                    <div class="accordion-section">
-                        <div class="accordion-header" onclick="toggleAccordion(this)">
-                            <i class="fas fa-chevron-right accordion-icon"></i>
-                            <span class="accordion-title">Прямой доступ (5)</span>
+                <div class="user-list-container" style="border: 1px solid #e0e0e0; border-radius: 6px; height: 350px; overflow-y: auto; margin-bottom: 32px; background: #fff;">
+                    
+                    <div class="user-item">
+                        <div class="user-icon"><i class="fas fa-user"></i></div>
+                        <div class="user-details">
+                            <div class="user-name">person@ivideon.com <span style="color: #828894; font-weight: normal;">(Прямой доступ)</span></div>
+                            <div class="user-roles">
+                                <span><strong>Основные права:</strong> Администрирование (Все права)</span>
+                                <span><strong>Видеоаналитика:</strong> Нет</span>
+                            </div>
                         </div>
-                        <div class="accordion-body" style="display: none;">
-                            <div class="user-item">
-                                <div class="user-icon"><i class="fas fa-user"></i></div>
-                                <div class="user-details">
-                                    <div class="user-name">person@ivideon.com</div>
-                                    <div class="user-roles">
-                                        <span><strong>Основные права:</strong> Администрирование (Все права)</span>
-                                        <span><strong>Видеоаналитика:</strong> Нет</span>
-                                    </div>
-                                </div>
-                                <div class="user-actions">
-                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
-                            </div>
-                            
-                            <div class="user-item">
-                                <div class="user-icon"><i class="fas fa-user"></i></div>
-                                <div class="user-details">
-                                    <div class="user-name">person@ivideon.com</div>
-                                    <div class="user-roles">
-                                        <span><strong>Основные права:</strong> Архив · PTZ · События и уведомления</span>
-                                        <span><strong>Видеоаналитика:</strong> Распознавание лиц (Просмотр)</span>
-                                    </div>
-                                </div>
-                                <div class="user-actions">
-                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
-                            </div>
-                            
-                            <div class="user-item">
-                                <div class="user-icon"><i class="fas fa-user"></i></div>
-                                <div class="user-details">
-                                    <div class="user-name">person@ivideon.com</div>
-                                    <div class="user-roles">
-                                        <span><strong>Основные права:</strong> Живое видео · Архив · PTZ · События и уведомления</span>
-                                        <span><strong>Видеоаналитика:</strong> Распознавание лиц (Администрирование)</span>
-                                    </div>
-                                </div>
-                                <div class="user-actions">
-                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
-                            </div>
-
-                            <div class="user-item">
-                                <div class="user-icon"><i class="fas fa-user"></i></div>
-                                <div class="user-details">
-                                    <div class="user-name">person@ivideon.com</div>
-                                    <div class="user-roles">
-                                        <span><strong>Основные права:</strong> Живое видео · Архив</span>
-                                        <span><strong>Видеоаналитика:</strong> Нет</span>
-                                    </div>
-                                </div>
-                                <div class="user-actions">
-                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
-                            </div>
+                        <div class="user-actions">
+                            <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
                         </div>
                     </div>
 
-                    <!-- ЧЕРЕЗ ГРУППЫ -->
-                    <div class="accordion-section">
-                        <div class="accordion-header" onclick="toggleAccordion(this)">
-                            <i class="fas fa-chevron-right accordion-icon"></i>
-                            <span class="accordion-title">Через вышестоящие группы (6)</span>
+                    <div class="user-item">
+                        <div class="user-icon"><i class="fas fa-user"></i></div>
+                        <div class="user-details">
+                            <div class="user-name">person@ivideon.com <span style="color: #828894; font-weight: normal;">(Прямой доступ)</span></div>
+                            <div class="user-roles">
+                                <span><strong>Основные права:</strong> Архив · PTZ · События и уведомления</span>
+                                <span><strong>Видеоаналитика:</strong> Распознавание лиц (Просмотр)</span>
+                            </div>
                         </div>
-                        <div class="accordion-body" style="display: none;">
-                            <div class="user-item">
-                                <div class="user-icon"><i class="fas fa-user"></i></div>
-                                <div class="user-details">
-                                    <div class="user-name">a.fomichev+123321@ivideon.com</div>
-                                    <div class="user-path">Мои камеры &gt; Analytics. Не удалять камеры. Возвращайте настройки в исходно...</div>
-                                    <div class="user-roles">
-                                        <span><strong>Основные права:</strong> Живое видео · Архив · События и уведомления</span>
-                                        <span><strong>Видеоаналитика:</strong> Распознавание лиц (Просмотр)</span>
-                                    </div>
-                                </div>
-                                <div class="user-actions">
-                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
-                            </div>
-                            
-                            <div class="user-item">
-                                <div class="user-icon"><i class="fas fa-user"></i></div>
-                                <div class="user-details">
-                                    <div class="user-name">a.fomichev@ivideon.com</div>
-                                    <div class="user-path">Мои камеры &gt; Analytics. Не удалять камеры. Возвращайте настройки в исходно...</div>
-                                    <div class="user-roles">
-                                        <span><strong>Основные права:</strong> Живое видео · Архив · События и уведомления</span>
-                                        <span><strong>Видеоаналитика:</strong> Нет</span>
-                                    </div>
-                                </div>
-                                <div class="user-actions">
-                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
-                            </div>
-                            
-                            <div class="user-item">
-                                <div class="user-icon"><i class="fas fa-user"></i></div>
-                                <div class="user-details">
-                                    <div class="user-name">m.pupkova+321@ivideon.com</div>
-                                    <div class="user-path">Мои камеры &gt; Analytics. Не удалять камеры. Возвращайте настройки в исходно...</div>
-                                    <div class="user-roles">
-                                        <span><strong>Основные права:</strong> Живое видео · Архив · PTZ · События и уведомления</span>
-                                        <span><strong>Видеоаналитика:</strong> Нет</span>
-                                    </div>
-                                </div>
-                                <div class="user-actions">
-                                    <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
-                                </div>
-                            </div>
+                        <div class="user-actions">
+                            <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
                         </div>
                     </div>
 
-                    <!-- ЧЕРЕЗ ОБЪЕКТЫ -->
-                    <div class="accordion-section">
-                        <div class="accordion-header" onclick="toggleAccordion(this)">
-                            <i class="fas fa-chevron-right accordion-icon"></i>
-                            <span class="accordion-title">Через объекты (0)</span>
+                    <div class="user-item">
+                        <div class="user-icon"><i class="fas fa-user"></i></div>
+                        <div class="user-details">
+                            <div class="user-name">person@ivideon.com <span style="color: #828894; font-weight: normal;">(Доступ через группу)</span></div>
+                            <div class="user-roles">
+                                <span><strong>Основные права:</strong> Архив · PTZ · События и уведомления</span>
+                                <span><strong>Видеоаналитика:</strong> Распознавание лиц (Просмотр)</span>
+                            </div>
                         </div>
-                        <div class="accordion-body" style="display: none;">
-                            <div style="color: #A5AAB2; font-size: 14px; text-align: center; padding: 24px 0;">Нет прав, переданных через объекты.</div>
+                        <div class="user-actions">
+                            <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
                         </div>
                     </div>
+
+                    <div class="user-item">
+                        <div class="user-icon"><i class="fas fa-user"></i></div>
+                        <div class="user-details">
+                            <div class="user-name">person@ivideon.com <span style="color: #828894; font-weight: normal;">(Доступ через объект)</span></div>
+                            <div class="user-roles">
+                                <span><strong>Основные права:</strong> Архив · PTZ · События и уведомления</span>
+                                <span><strong>Видеоаналитика:</strong> Распознавание лиц (Просмотр)</span>
+                            </div>
+                        </div>
+                        <div class="user-actions">
+                            <button class="btn-icon-small"><i class="fas fa-ellipsis-v"></i></button>
+                        </div>
+                    </div>
+
                 </div>
-                
-            </div>
-            
-            <div class="modal-footer" style="justify-content: flex-end;">
+            </div>            <div class="modal-footer" style="justify-content: flex-end;">
                 <div style="display: flex; gap: 8px;">
                     <button class="btn-outline" style="color: #1ba0fa; border-color: #1ba0fa;" onclick="closeModal('accessModalNew')">ПЕРЕДАТЬ ПРАВА</button>
                     <button class="btn-primary" onclick="closeModal('accessModalNew')">ГОТОВО</button>
@@ -1224,6 +1149,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
