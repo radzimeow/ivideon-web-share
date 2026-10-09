@@ -302,35 +302,35 @@
     <!-- Modal Права доступа (Новый вариант) -->
     <div class="modal-overlay" id="accessModalNew">
         <div class="modal-dialog" id="accessModalNewContent" style="position: relative;">
-            <div id="accessModalNewMainView">
+                        <div id="accessModalNewMainView">
                 <div class="modal-header">
-                    <h2 class="modal-title">Права доступа</h2>
+                    <div style="display: flex; align-items: center;">
+                        <button class="modal-back" onclick="closeModal('accessModalNew'); openModal('forkModal');" style="background: none; border: none; font-size: 18px; color: #888; cursor: pointer; margin-right: 15px; outline: none;"><i class="fas fa-arrow-left"></i></button>
+                        <h2 class="modal-title">Права доступа</h2>
+                    </div>
                     <button class="modal-close" onclick="closeModal('accessModalNew')"><i class="fas fa-times"></i></button>
                 </div>
                 
                 <div class="modal-body">
-                    <div class="modal-info-block modal-info-block-new">
-                        <div class="info-title"><i class="fas fa-video"></i> <span id="dynamicCamName1New">Этаж 1. Вход</span></div>
-                        <div class="info-path">Мои камеры > Analytics. Не удалять камеры. Возвращайте настройки в исходное состояние</div>
+                    <div class="modal-info-block modal-info-block-new" style="display: flex; align-items: center; padding: 12px 16px; background: #F7F7F8; border-radius: 6px; margin-bottom: 8px;">
+                        <i class="fas fa-video" style="color: #A5AAB2; margin-right: 12px;"></i>
+                        <span id="dynamicCamName1New" style="font-size: 14px; color: #31363F;">Этаж 1. Вход</span>
                     </div>
 
-                    <div class="public-access-block public-access-block-new" onclick="handlePublicAccessClick()">
-                        <div class="public-left">
-                            <div class="public-icon" style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;"><i class="fas fa-users"></i></div>
-                            <div>
-                                <div class="public-title">Публичный доступ</div>
-                                <div class="public-desc">Трансляцию с камеры могут просматривать обладатели прямой ссылки или посетители сайта</div>
-                            </div>
+                    <div class="public-access-block public-access-block-new" onclick="handlePublicAccessClick()" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #F7F7F8; border-radius: 6px; margin-bottom: 24px; cursor: pointer;">
+                        <div class="public-left" style="display: flex; align-items: center;">
+                            <i class="fas fa-share-alt public-icon" style="color: #A5AAB2; margin-right: 12px; font-size: 16px;"></i>
+                            <div class="public-title" style="font-size: 14px; color: #31363F;">Публичный доступ к камере</div>
                         </div>
-                        <div class="public-right" id="publicAccessStatusNew">
-                            <span>Доступ закрыт</span><i class="fas fa-chevron-right" style="margin-left: auto; color: #A5AAB2;"></i>
+                        <div class="public-right" id="publicAccessStatusNew" style="display: flex; align-items: center; color: #828894; font-size: 14px;">
+                            <span>Доступ закрыт</span><i class="fas fa-chevron-right" style="margin-left: 8px; color: #A5AAB2;"></i>
                         </div>
                     </div>
 
                     <div class="modal-toolbar">
                         <div class="search-box modal-search">
                             <i class="fas fa-search"></i>
-                            <input type="text" placeholder="Поиск">
+                            <input type="text" placeholder="Поиск пользователей">
                         </div>
                         <div class="filters modal-filters" style="flex-shrink: 0;">
                             <span class="filter-label" style="margin-right: 12px;">ФИЛЬТРЫ:</span>
@@ -1119,8 +1119,8 @@
         function updatePublicAccessStatusUI() {
             const statusBlock = document.getElementById("publicAccessStatus");
             const statusBlockNew = document.getElementById("publicAccessStatusNew");
-            const openHTML = '<span>Доступ открыт</span><i class="fas fa-chevron-right" style="margin-left: auto; color: #A5AAB2;"></i>';
-            const closedHTML = '<span>Доступ закрыт</span><i class="fas fa-chevron-right" style="margin-left: auto; color: #A5AAB2;"></i>';
+            const openHTML = '<span>Доступ открыт</span><i class="fas fa-chevron-right" style="margin-left: 8px; color: #A5AAB2;"></i>';
+            const closedHTML = '<span>Доступ закрыт</span><i class="fas fa-chevron-right" style="margin-left: 8px; color: #A5AAB2;"></i>';
             
             const iconNew = document.querySelector("#accessModalNew .public-icon");
             const titleNew = document.querySelector("#accessModalNew .public-title");
