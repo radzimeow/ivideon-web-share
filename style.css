@@ -589,6 +589,11 @@ body {
 }
 
 .info-title i {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     color: #A5AAB2;
     margin-right: 10px;
     font-size: 16px;
@@ -643,14 +648,15 @@ body {
 
 .modal-toolbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 12px;
 }
 
 .modal-search {
     width: 277px;
-    flex: none;
+    flex: 0 0 277px;
+    margin-right: 24px;
 }
 
 .modal-search input {
@@ -659,7 +665,9 @@ body {
 
 .modal-filters {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
+    flex: 0 0 auto !important;
 }
 
 .modal-pill {
@@ -1233,3 +1241,19 @@ input:checked + .slider:before {
 
 
 
+
+
+
+
+.public-right span {
+    line-height: 24px;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+.public-left span {
+    line-height: 24px;
+    display: inline-flex;
+    align-items: center;
+}
