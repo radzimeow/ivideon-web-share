@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -329,7 +329,7 @@
                     <div class="filters modal-filters" style="flex-shrink: 0;">
                         <span class="filter-label" style="margin-right: 12px;">ФИЛЬТРЫ:</span>
                         <span class="filter-pill modal-pill" style="margin-right: 8px;">ТИПЫ ПРАВ</span>
-                        <span class="filter-pill modal-pill">ТИПЫ ДОСТУПА</span>
+                        <span class="filter-pill modal-pill" onclick="openFilterModal()">ТИПЫ ДОСТУПА</span>
                     </div>
                 </div>
 
@@ -1146,7 +1146,83 @@
                 event.target.classList.remove('open');
             }
         }
+        function openFilterModal() {
+            openModal('filterModal');
+        }
+        function applyFilters() {
+            let checkboxes = document.querySelectorAll('.access-type-filter');
+            let selectedTypes = [];
+            checkboxes.forEach(cb => {
+                if(cb.checked) selectedTypes.push(cb.value.toLowerCase());
+            });
+            
+            let userItems = document.querySelectorAll('#accessModalNew .user-item');
+            userItems.forEach(item => {
+                if(selectedTypes.length === 0) {
+                    item.style.display = 'flex';
+                } else {
+                    let text = item.innerText.toLowerCase();
+                    if(selectedTypes.some(type => text.includes(type))) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+            closeModal('filterModal');
+        }
+        function resetCurrentFilter() {
+            document.querySelectorAll('.access-type-filter').forEach(cb => cb.checked = false);
+        }
+        function resetAllFilters() {
+            resetCurrentFilter();
+            applyFilters();
+        }
     </script>
+    <!-- Filter Modal -->
+    <div class="modal-overlay" id="filterModal">
+        <div class="modal-dialog" style="width: 500px;">
+            <div class="modal-header" style="padding-bottom: 0;">
+                <h2>Фильтр</h2>
+                <button class="close-btn" onclick="closeModal('filterModal')"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="modal-body" style="padding: 0 32px 24px 32px;">
+                <div class="filter-tabs">
+                    <div class="filter-tab">ТИПЫ ПРАВ</div>
+                    <div class="filter-tab active">ТИПЫ ДОСТУПА</div>
+                </div>
+                
+                <div class="filter-options">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" value="Прямой доступ" class="access-type-filter">
+                        <span class="checkmark"></span>
+                        Прямой доступ
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" value="через группу" class="access-type-filter">
+                        <span class="checkmark"></span>
+                        Доступ через вышестоящую группу
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" value="через объект" class="access-type-filter">
+                        <span class="checkmark"></span>
+                        Доступ через объект
+                    </label>
+                </div>
+                
+                <button class="btn-reset-current" onclick="resetCurrentFilter()">СБРОСИТЬ ФИЛЬТР «ТИПЫ ДОСТУПА»</button>
+            </div>
+            
+            <div class="modal-footer" style="justify-content: space-between;">
+                <button class="btn-reset-all" onclick="resetAllFilters()">СБРОСИТЬ ВСЁ</button>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-outline" onclick="closeModal('filterModal')">ОТМЕНА</button>
+                    <button class="btn-primary" onclick="applyFilters()">ПРИМЕНИТЬ ФИЛЬТР</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
