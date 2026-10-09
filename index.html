@@ -285,25 +285,25 @@
     </div>
 
     <!-- Modal Права доступа -->
-        <!-- Modal Р Р°Р·РІРёР»РєР° -->
+        <!-- Modal Развилка -->
     <div class="modal-overlay" id="forkModal">
         <div class="modal-dialog" style="width: 400px; padding-bottom: 24px;">
             <div class="modal-header">
-                <h2 class="modal-title">Р’С‹Р±РµСЂРёС‚Рµ РІР°СЂРёР°РЅС‚</h2>
+                <h2 class="modal-title">Выберите вариант</h2>
                 <button class="modal-close" onclick="closeModal('forkModal')"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body" style="display: flex; flex-direction: column; gap: 16px;">
-                <button class="btn-primary" onclick="openOldAccessModal()" style="width: 100%;">РЎС‚Р°СЂС‹Р№ РІР°СЂРёР°РЅС‚</button>
-                <button class="btn-primary" onclick="openNewAccessModal()" style="width: 100%; background: #00d26a; border-color: #00d26a;">РќРѕРІС‹Р№ РІР°СЂРёР°РЅС‚</button>
+                <button class="btn-primary" onclick="openOldAccessModal()" style="width: 100%;">Старый вариант</button>
+                <button class="btn-primary" onclick="openNewAccessModal()" style="width: 100%; background: #00d26a; border-color: #00d26a;">Новый вариант</button>
             </div>
         </div>
     </div>
-<!-- Modal РџСЂР°РІР° РґРѕСЃС‚СѓРїР° (РќРѕРІС‹Р№ РІР°СЂРёР°РЅС‚) -->
+<!-- Modal Права доступа (Новый вариант) -->
 <div class="modal-overlay" id="accessModalNew">
         <div class="modal-dialog">
             <div class="modal-header">
                 <h2 class="modal-title">Права доступа</h2>
-                <button class="modal-close" onclick="closeModal('accessModal')"><i class="fas fa-times"></i></button>
+                <button class="modal-close" onclick="closeModal('accessModalNew')"><i class="fas fa-times"></i></button>
             </div>
             
             <div class="modal-body">
@@ -469,8 +469,8 @@
             
             <div class="modal-footer" style="justify-content: flex-end;">
                 <div style="display: flex; gap: 8px;">
-                    <button class="btn-outline" style="color: #1ba0fa; border-color: #1ba0fa;" onclick="closeModal('accessModal')">ПЕРЕДАТЬ ПРАВА</button>
-                    <button class="btn-primary" onclick="closeModal('accessModal')">ГОТОВО</button>
+                    <button class="btn-outline" style="color: #1ba0fa; border-color: #1ba0fa;" onclick="closeModal('accessModalNew')">ПЕРЕДАТЬ ПРАВА</button>
+                    <button class="btn-primary" onclick="closeModal('accessModalNew')">ГОТОВО</button>
                 </div>
             </div>
         </div>
