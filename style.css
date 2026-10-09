@@ -1,4 +1,4 @@
-* {
+﻿* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -643,10 +643,9 @@ body {
 
 .modal-toolbar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
-    gap: 24px;
 }
 
 .modal-search {
@@ -1213,6 +1212,7 @@ input:checked + .slider:before {
     padding: 12px !important;
 }
 .public-access-block-new {
+    padding: 12px !important;
     background-color: #F7F7F8 !important;
     border: none !important;
     margin-top: 0 !important;
@@ -1227,6 +1227,8 @@ input:checked + .slider:before {
     font-weight: 400;
     margin-bottom: 0;
 }
+
+
 
 
 
