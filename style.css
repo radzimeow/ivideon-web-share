@@ -1,4 +1,4 @@
-﻿* {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -654,8 +654,13 @@ body {
 }
 
 .modal-search {
+    flex: 1;
+    margin-right: 24px;
+}
+#accessModalNew .modal-search {
     width: 277px;
     flex: 0 1 277px;
+    margin-right: 0;
 }
 
 .modal-search input {
