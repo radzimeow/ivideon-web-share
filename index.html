@@ -1057,16 +1057,26 @@
             const firstContent = document.getElementById('active-tab-link');
             if(firstContent) firstContent.classList.add('active');
         }
-
         function handlePublicAccessClick() {
+            let isNewModal = document.getElementById('accessModalNew').classList.contains('open');
             if (cameraStates[currentCameraId]) {
-                closeModal('accessModal');
-                resetPublicActiveTabs();
-                loadSettingsToUI(2);
-                openModal('publicActiveModal');
+                if (isNewModal) {
+                    document.getElementById('accessModalNewMainView').style.display = 'none';
+                    document.getElementById('accessModalNewSettingsView').style.display = 'block';
+                } else {
+                    closeModal('accessModal');
+                    resetPublicActiveTabs();
+                    loadSettingsToUI(2);
+                    openModal('publicActiveModal');
+                }
             } else {
                 openModal('publicWarningModal');
             }
+        }
+
+        function goBackToMainView() {
+            document.getElementById('accessModalNewSettingsView').style.display = 'none';
+            document.getElementById('accessModalNewMainView').style.display = 'block';
         }
 
         function goBackToAccessModal() {
@@ -1098,16 +1108,29 @@
             const btn = document.getElementById('applyActiveBtn');
             if(btn) btn.disabled = false;
         }
-
         function updatePublicAccessStatusUI() {
             const statusBlock = document.getElementById('publicAccessStatus');
-            if (statusBlock) {
-                if (cameraStates[currentCameraId]) {
-                    statusBlock.innerHTML = `<span>Доступ открыт</span><i class="fas fa-chevron-right"></i>`;
+            const statusBlockNew = document.getElementById('publicAccessStatusNew');
+            const openHTML = `<span>Доступ открыт</span><i class="fas fa-chevron-right"></i>`;
+            const closedHTML = `<span>Доступ закрыт</span><i class="fas fa-chevron-right"></i>`;
+            
+            if (cameraStates[currentCameraId]) {
+                if (statusBlock) {
+                    statusBlock.innerHTML = openHTML;
                     statusBlock.style.color = '#1ba0fa';
-                } else {
-                    statusBlock.innerHTML = `<span>Доступ закрыт</span><i class="fas fa-chevron-right"></i>`;
-                    statusBlock.style.color = '#888';
+                }
+                if (statusBlockNew) {
+                    statusBlockNew.innerHTML = openHTML;
+                    statusBlockNew.style.color = '#1ba0fa';
+                }
+            } else {
+                if (statusBlock) {
+                    statusBlock.innerHTML = closedHTML;
+                    statusBlock.style.color = '#828894';
+                }
+                if (statusBlockNew) {
+                    statusBlockNew.innerHTML = closedHTML;
+                    statusBlockNew.style.color = '#828894';
                 }
             }
         }
