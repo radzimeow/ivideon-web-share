@@ -1130,6 +1130,7 @@
                     const nNew4 = document.getElementById('new_dynamicCamName4');
                     const nNew1 = document.getElementById('dynamicCamName1New');
                     if (nNew4 && nNew1) nNew4.innerText = nNew1.innerText;
+                    syncSettingsToNewView();
                     document.getElementById('accessModalNewMainView').style.display = 'none';
                     document.getElementById('accessModalNewSettingsView').style.display = 'flex';
                 } else {
@@ -1206,13 +1207,45 @@
             }
         }
 
+        function syncSettingsToNewView() {
+            const s1 = document.getElementById('setting-sound-1');
+            const a1 = document.getElementById('setting-archive-1');
+            const l1 = document.getElementById('setting-link-1');
+            const u1 = document.getElementById('setting-link-url-1');
+            const t1 = document.getElementById('setting-link-text-1');
+            const s2 = document.getElementById('new_setting-sound-2');
+            const a2 = document.getElementById('new_setting-archive-2');
+            const l2 = document.getElementById('new_setting-link-2');
+            const u2 = document.getElementById('new_setting-link-url-2');
+            const t2 = document.getElementById('new_setting-link-text-2');
+            if (s1 && s2) s2.checked = s1.checked;
+            if (a1 && a2) a2.checked = a1.checked;
+            if (l1 && l2) {
+                l2.checked = l1.checked;
+                const box = document.getElementById('new_activeLinkBox');
+                if (box) box.style.display = l1.checked ? 'block' : 'none';
+            }
+            if (u1 && u2) u2.value = u1.value;
+            if (t1 && t2) t2.value = t1.value;
+        }
+
         function publishCamera() {
             cameraStates[currentCameraId] = true;
             isPublicAccessOpen = true;
             closeModal("publicOfferModal");
             
             let isNewModal = document.getElementById("accessModalNew").classList.contains("open");
-            if (!isNewModal) {
+            if (isNewModal) {
+                resetPublicActiveTabsNew();
+                const nNew4 = document.getElementById('new_dynamicCamName4');
+                const nNew1 = document.getElementById('dynamicCamName1New');
+                if (nNew4 && nNew1) nNew4.innerText = nNew1.innerText;
+                syncSettingsToNewView();
+                document.getElementById('accessModalNewMainView').style.display = 'none';
+                document.getElementById('accessModalNewSettingsView').style.display = 'flex';
+                const btn = document.getElementById('new_applyActiveBtn');
+                if (btn) btn.disabled = true;
+            } else {
                 closeModal("accessModal");
                 const btn = document.getElementById("applyActiveBtn");
                 if(btn) btn.disabled = true;
