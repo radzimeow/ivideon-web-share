@@ -503,7 +503,7 @@
                             </div>
                             <div class="settings-toggle">
                                 <label class="toggle-switch">
-                            <input type="checkbox" id="new_setting-link-2" checked onchange="document.getElementById('activeLinkBox').style.display = this.checked ? 'block' : 'none'; enableApplyButtonNew();">
+                            <input type="checkbox" id="new_setting-link-2" checked onchange="document.getElementById('new_activeLinkBox').style.display = this.checked ? 'block' : 'none'; enableApplyButtonNew();">
                             <span class="slider"></span>
                                 </label>
                             </div>
@@ -1207,6 +1207,38 @@
             }
         }
 
+        function loadSettingsToNewUI() {
+            const cfg = cameraConfig[currentCameraId];
+            if(!cfg) return;
+            const s2 = document.getElementById('new_setting-sound-2');
+            const a2 = document.getElementById('new_setting-archive-2');
+            const l2 = document.getElementById('new_setting-link-2');
+            const u2 = document.getElementById('new_setting-link-url-2');
+            const t2 = document.getElementById('new_setting-link-text-2');
+            const box = document.getElementById('new_activeLinkBox');
+            if (s2) s2.checked = cfg.sound;
+            if (a2) a2.checked = cfg.archive;
+            if (l2) l2.checked = cfg.link;
+            if (box) box.style.display = cfg.link ? 'block' : 'none';
+            if (u2) u2.value = cfg.linkUrl;
+            if (t2) t2.value = cfg.linkText;
+        }
+
+        function saveSettingsFromNewUI() {
+            const cfg = cameraConfig[currentCameraId];
+            if(!cfg) return;
+            const s2 = document.getElementById('new_setting-sound-2');
+            const a2 = document.getElementById('new_setting-archive-2');
+            const l2 = document.getElementById('new_setting-link-2');
+            const u2 = document.getElementById('new_setting-link-url-2');
+            const t2 = document.getElementById('new_setting-link-text-2');
+            if (s2) cfg.sound = s2.checked;
+            if (a2) cfg.archive = a2.checked;
+            if (l2) cfg.link = l2.checked;
+            if (u2) cfg.linkUrl = u2.value;
+            if (t2) cfg.linkText = t2.value;
+        }
+
         function syncSettingsToNewView() {
             const s1 = document.getElementById('setting-sound-1');
             const a1 = document.getElementById('setting-archive-1');
@@ -1322,7 +1354,7 @@
         function applyActiveSettingsNew() {
             const btn = document.getElementById('new_applyActiveBtn');
             if (btn) btn.disabled = true;
-            goBackToMainView();
+            saveSettingsFromNewUI();
         }
 
         function switchActiveTab(tabElement, tabId) {
