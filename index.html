@@ -405,16 +405,64 @@
             </div> <!-- End Main View -->
             
             <div id="accessModalNewSettingsView" style="display: none; background: #fff; flex-direction: column;">
-                <div class="modal-header">
-                    <button class="modal-close" style="position: static; margin-right: 16px; margin-top: 0; margin-left: -8px; color: #888; font-size: 18px;" onclick="goBackToMainView()"><i class="fas fa-arrow-left"></i></button>
-                    <h2 class="modal-title" style="flex: 1;">Настройки публичного доступа</h2>
+            <div class="modal-header">
+                <h2 class="modal-title" style="display: flex; align-items: center; gap: 16px;">
+                    <button style="width: 32px; height: 32px; display: flex; justify-content: center; align-items: center; background: none; border: none; cursor: pointer; color: #A5AAB2; font-size: 16px; padding: 0;" onclick="goBackToMainView()"><i class="fas fa-arrow-left"></i></button>
+                    Публичный доступ к камере
+                </h2>
+                <button class="modal-close" onclick="closeModal('accessModalNew')"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body public-settings-body">
+                
+                <!-- Info Banner -->
+                <div class="public-banner">
+                    <div class="banner-icon"><i class="fas fa-share-alt"></i></div>
+                    <div class="banner-content">
+                        <div class="banner-title">Публичный доступ открыт</div>
+                        <div class="banner-text">Это значит, что трансляцию с камеры могут просматривать обладатели прямой ссылки или посетители сайта, куда встроено видео.</div>
+                        <a href="#" class="banner-link" onclick="openCloseAccessModal(); return false;">ЗАКРЫТЬ ДОСТУП</a>
+                    </div>
                 </div>
-                <div class="modal-body public-settings-body">
+
+                <!-- Tabs -->
+                <div class="modal-tabs" style="margin-bottom: 0;">
+                    <div class="modal-tab active" onclick="switchActiveTabNew(this, 'new-active-tab-link')">ПУБЛИЧНАЯ ССЫЛКА</div>
+                    <div class="modal-tab" onclick="switchActiveTabNew(this, 'new-active-tab-settings')">НАСТРОЙКИ</div>
+                </div>
+
+                <!-- Tab: ПУБЛИЧНАЯ ССЫЛКА -->
+                <div class="modal-tab-content flex-content active" id="new-active-tab-link">
+                    <div class="form-group">
+                        <label class="form-label">Ссылка на камеру</label>
+                        <div class="input-with-copy">
+                            <input type="text" value="https://my.ivideon.com/cameras/groups" readonly>
+                            <button class="copy-btn"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Код для вставки</label>
+                        <div class="input-with-copy">
+                            <input type="text" value='<div class="block1">Lorem ipsum dolor sit amet, consectetuer...</div>' readonly>
+                            <button class="copy-btn"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Разрешение</label>
+                        <select class="form-select">
+                            <option>320x427</option>
+                            <option>640x480</option>
+                            <option>1280x720</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Tab: НАСТРОЙКИ -->
+                <div class="modal-tab-content flex-content" id="new-active-tab-settings">
                     <div class="settings-row">
                         <div class="settings-info">
                             <div class="settings-title">Камера</div>
                             <div class="settings-camera-name" style="position: relative;">
-                                <i class="fas fa-video"></i> <span id="new_dynamicCamName2">Этаж 1. Вход</span>
+                                <i class="fas fa-video"></i> <span id="new_dynamicCamName4">Этаж 1. Вход</span>
                                 <a href="#" class="rename-link" style="position: absolute; right: -30px;">Переименовать</a>
                             </div>
                             <div class="settings-desc">Название вашей камеры будет отображаться в публичном видео.</div>
@@ -428,8 +476,8 @@
                         </div>
                         <div class="settings-toggle">
                             <label class="toggle-switch">
-                                <input type="checkbox" id="new_setting-sound-1">
-                                <span class="slider"></span>
+                            <input type="checkbox" id="new_setting-sound-2" checked onchange="enableApplyButtonNew()">
+                            <span class="slider"></span>
                             </label>
                         </div>
                     </div>
@@ -441,8 +489,8 @@
                         </div>
                         <div class="settings-toggle">
                             <label class="toggle-switch">
-                                <input type="checkbox" id="new_setting-archive-1">
-                                <span class="slider"></span>
+                            <input type="checkbox" id="new_setting-archive-2" checked onchange="enableApplyButtonNew()">
+                            <span class="slider"></span>
                             </label>
                         </div>
                     </div>
@@ -455,28 +503,33 @@
                             </div>
                             <div class="settings-toggle">
                                 <label class="toggle-switch">
-                                    <input type="checkbox" id="new_setting-link-1" onchange="document.getElementById('new_linkBox').style.display = this.checked ? 'block' : 'none'">
-                                    <span class="slider"></span>
+                            <input type="checkbox" id="new_setting-link-2" checked onchange="document.getElementById('activeLinkBox').style.display = this.checked ? 'block' : 'none'; enableApplyButtonNew();">
+                            <span class="slider"></span>
                                 </label>
                             </div>
                         </div>
 
-                        <div class="link-settings-box" id="new_linkBox" style="display: none; background: #F7F7F8; padding: 20px; border-radius: 8px;">
+                        <div class="link-settings-box" id="new_activeLinkBox" style="display: block; background: #F7F7F8; padding: 20px; border-radius: 8px;">
                             <div class="form-group" style="margin-bottom: 15px;">
                                 <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #31363F;">Ссылка поверх видео</label>
-                                <input type="text" id="new_setting-link-url-1" placeholder="Например, https://sanatoriy-more.ru" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;">
+                                <input type="text" id="new_setting-link-url-2" placeholder="Например, https://sanatoriy-more.ru" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;" oninput="enableApplyButtonNew()">
                             </div>
                             <div class="form-group" style="margin-bottom: 0;">
                                 <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #31363F;">Текст, который будет отображаться вместо адреса <span style="color: #999;">(необязательно)</span></label>
-                                <input type="text" id="new_setting-link-text-1" placeholder="Например, Заказать путёвку в санаторий «Море»" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;">
+                                <input type="text" id="new_setting-link-text-2" placeholder="Например, Заказать путёвку в санаторий «Море»" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; outline: none;" oninput="enableApplyButtonNew()">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+
+            </div>
+            <div class="modal-footer" style="justify-content: space-between;">
+                <button class="btn-text" style="color: #1ba0fa; background: none; border: none; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase;">ПРОСМОТР ТРАНСЛЯЦИИ</button>
+                <div style="display: flex; gap: 8px;">
                     <button class="btn-outline" onclick="goBackToMainView()">ОТМЕНА</button>
-                    <button class="btn-primary" onclick="goBackToMainView()">ГОТОВО</button>
+                    <button class="btn-primary" id="new_applyActiveBtn" disabled onclick="applyActiveSettingsNew()">ПРИМЕНИТЬ</button>
                 </div>
+            </div>
             </div>
         </div>
     </div>
@@ -1013,6 +1066,10 @@
             if(n2) n2.innerText = name;
             if(n3) n3.innerText = name;
             if(n4) n4.innerText = name;
+            const nNew1 = document.getElementById('dynamicCamName1New');
+            const nNew4 = document.getElementById('new_dynamicCamName4');
+            if(nNew1) nNew1.innerText = name;
+            if(nNew4) nNew4.innerText = name;
 
             if (isPublicAccessOpen) {
                 resetPublicActiveTabs();
@@ -1045,6 +1102,10 @@
             if(n2) n2.innerText = name;
             if(n3) n3.innerText = name;
             if(n4) n4.innerText = name;
+            const nNew1 = document.getElementById('dynamicCamName1New');
+            const nNew4 = document.getElementById('new_dynamicCamName4');
+            if(nNew1) nNew1.innerText = name;
+            if(nNew4) nNew4.innerText = name;
 
             updatePublicAccessStatusUI();
             openModal('forkModal');
@@ -1066,6 +1127,10 @@
             let isNewModal = document.getElementById('accessModalNew').classList.contains('open');
             if (cameraStates[currentCameraId]) {
                 if (isNewModal) {
+                    resetPublicActiveTabsNew();
+                    const nNew4 = document.getElementById('new_dynamicCamName4');
+                    const nNew1 = document.getElementById('dynamicCamName1New');
+                    if (nNew4 && nNew1) nNew4.innerText = nNew1.innerText;
                     document.getElementById('accessModalNewMainView').style.display = 'none';
                     document.getElementById('accessModalNewSettingsView').style.display = 'flex';
                 } else {
@@ -1171,7 +1236,9 @@
 
         function cancelCloseAccess() {
             closeModal('closeAccessModal');
-            openModal('publicActiveModal');
+            if (!document.getElementById('accessModalNew').classList.contains('open')) {
+                openModal('publicActiveModal');
+            }
         }
 
         function confirmCloseAccess() {
@@ -1183,7 +1250,47 @@
                 shareBadge.style.display = 'none';
             }
             updatePublicAccessStatusUI();
-            openModal('accessModal');
+            if (document.getElementById('accessModalNew').classList.contains('open')) {
+                document.getElementById('accessModalNewSettingsView').style.display = 'none';
+                document.getElementById('accessModalNewMainView').style.display = 'block';
+            } else {
+                openModal('accessModal');
+            }
+        }
+
+        function switchActiveTabNew(tabElement, tabId) {
+            const modal = document.getElementById('accessModalNewSettingsView');
+            const tabs = modal.querySelectorAll('.modal-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabElement.classList.add('active');
+            
+            const contents = modal.querySelectorAll('.modal-tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function resetPublicActiveTabsNew() {
+            const modal = document.getElementById('accessModalNewSettingsView');
+            if (!modal) return;
+            const tabs = modal.querySelectorAll('.modal-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            if(tabs.length > 0) tabs[0].classList.add('active');
+            
+            const contents = modal.querySelectorAll('.modal-tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            const firstContent = document.getElementById('new-active-tab-link');
+            if(firstContent) firstContent.classList.add('active');
+        }
+
+        function enableApplyButtonNew() {
+            const btn = document.getElementById('new_applyActiveBtn');
+            if (btn) btn.disabled = false;
+        }
+
+        function applyActiveSettingsNew() {
+            const btn = document.getElementById('new_applyActiveBtn');
+            if (btn) btn.disabled = true;
+            goBackToMainView();
         }
 
         function switchActiveTab(tabElement, tabId) {
@@ -1334,7 +1441,6 @@
     </div>
 </body>
 </html>
-
 
 
 
